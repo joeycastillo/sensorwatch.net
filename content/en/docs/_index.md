@@ -1,24 +1,18 @@
-
 ---
-title: "Documentation"
-linkTitle: "Documentation"
-weight: 20
-menu:
-  main:
-    weight: 20
+title: "Sensor Watch: Home"
+linkTitle: "Sensor Watch Home"
+weight: 0
 ---
+**Not sure where to start?** If you bought a Sensor Watch board on Crowd Supply and need to assemble it, follow the instructions in the video below. But first, read these two notes:
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+Did you also get a Sensor Board?
+--------------------------------
 
+If you have a sensor board (such as the Temperature Sensor included with most early orders), **you must install it first**, before you begin the steps in the video. Your sensor board will come packaged with instructions describing how to install it in the Sensor Watch 9-pin connector.
 
-This section is where the user documentation for your project lives - all the information your users need to understand and successfully use your project. 
+Do you want to install alternate firmware?
+------------------------------------------
 
-For large documentation sets we recommend adding content under the headings in this section, though if some or all of them don’t apply to your project feel free to remove them or add your own. You can see an example of a smaller Docsy documentation site in the [Docsy User Guide](https://docsy.dev/docs/), which lives in the [Docsy theme repo](https://github.com/google/docsy/tree/master/userguide) if you'd like to copy its docs section. 
+Sensor Watch ships with a build of Movement that includes a Clock and World Clock, as well as a Sunrise/Sunset and Moon Phase complication. If you wish to install an [alternate firmware](/docs/firmware/prebuilt/), you should download it and install it before installing your Sensor Watch board in the watch case, as installing it in the watch case renders the USB port inaccessible. Instructions for flashing new firmware [can be found here](/docs/firmware/flashing/).
 
-Other content such as marketing material, case studies, and community updates should live in the [About](/about/) and [Community](/community/) pages.
-
-Find out how to use the Docsy theme in the [Docsy User Guide](https://docsy.dev/docs/). You can learn more about how to organize your documentation (and how we organized this site) in [Organizing Your Content](https://docsy.dev/docs/best-practices/organizing-content/).
-
-
+{{< youtube id="Zr0pKeC2VFU" >}}

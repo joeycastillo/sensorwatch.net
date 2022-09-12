@@ -1,44 +1,55 @@
-+++
-title = "Goldydocs"
-linkTitle = "Goldydocs"
-
-+++
-
-{{< blocks/cover title="Welcome to Goldydocs: A Docsy Example Project!" image_anchor="top" height="full" color="orange" >}}
+---
+title: "Sensor Watch"
+linkTitle: "Sensor Watch"
+---
+{{< blocks/cover title="Sensor Watch: a board swap for the classic Casio F-91W wristwatch" image_anchor="top" height="full" color="orange" >}}
 <div class="mx-auto">
-	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
-		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="{{< relref "/docs" >}}">
+		Get Started <i class="fas fa-arrow-alt-circle-right ml-2"></i>
 	</a>
-	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/google/docsy-example">
-		Download <i class="fab fa-github ml-2 "></i>
+	<a class="btn btn-lg btn-primary mr-3 mb-4" href="https://www.crowdsupply.com/oddly-specific-objects/sensor-watch">
+		Preorder at Crowd Supply <i class="fas fa-shopping-cart ml-2 "></i>
 	</a>
-	<p class="lead mt-5">Porridge temperature assessment - in the cloud!</p>
+	<p class="lead mt-5">&nbsp;</p>
 	{{< blocks/link-down color="info" >}}
 </div>
 {{< /blocks/cover >}}
 
-
 {{% blocks/lead color="primary" %}}
-Goldydocs provides a single web UI providing visibility into porridge temperature, chair size, and bed softness metrics! You can even find out who's been eating **your** porridge.
+Sensor Watch is a board replacement for the classic Casio F‑91W wristwatch. It is powered by a Microchip SAM L22 microcontroller with built-in segment LCD controller. You can write your own programs for the watch using the provided watch library, program the watch over USB using the built-in UF2 bootloader, and then install the board in your existing watch case to run your own software on your wrist.
 
-(Sadly, Goldydocs isn't a real project, but you can use this site as an example to create your own real websites with [Docsy](https://docsy.dev))
+<p><img src="/docs/images/sensor-watch.jpg" alt="Photo: a close-up of the Sensor Watch circuit board, and a wristwatch displaying the word “Hello”" width="100%"></p>
+
 {{% /blocks/lead %}}
 
 {{< blocks/section color="dark" >}}
-{{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
-The Goldydocs UI now shows chair size metrics by default.
 
-Please follow this space for updates!
+{{% blocks/feature icon="fas fa-microchip" title="Smart ARM power" %}}
+Sensor Watch is powered by the Microchip SAM L22, an ARM Cortex M0+ microcontroller with tons of powerful peripherals.
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-battery-full" title="Long-lived battery" %}}
+Sensor Watch sips single-digit microamperes of power, making this a watch you can wear all year on a single coin cell.
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% blocks/feature icon="fas fa-clock" title="Classic Timekeeping" %}}
+A highly accurate 32.768 KHz crystal keeps accurate time — and displays it on the original F-91W LCD for a classic look and feel.
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/docsydocs" %}}
-For announcement of latest features etc.
+{{% blocks/feature icon="far fa-lightbulb" title="Light and sound" %}}
+The LED backlight supports shades of red, green and yellow. With light soldering, you can also use the F-91W's piezo buzzer.
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fas fa-wave-square" title="Sensor Extensible" %}}
+A 9-pin connector breaks out an I²C bus and five GPIO for SPI, UART or analog input, letting you add sensors to Sensor Watch.
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fab fa-github" title="Open Source" %}}
+Fully open source hardware and software allow you to buy one or build your own — and remix the firmware to suit your taste.
 {{% /blocks/feature %}}
 
 
@@ -47,7 +58,7 @@ For announcement of latest features etc.
 
 {{< blocks/section >}}
 <div class="col">
-<h1 class="text-center">This is the second Section</h1>
+<h1 class="text-center"><a href="https://www.crowdsupply.com/oddly-specific-objects/sensor-watch">Preorder at Crowd Supply!</a></h1>
 </div>
 
 {{< /blocks/section >}}
@@ -55,18 +66,18 @@ For announcement of latest features etc.
 
 
 {{< blocks/section >}}
-{{% blocks/feature icon="fab fa-app-store-ios" title="Download **from AppStore**" %}}
-Get the Goldydocs app!
+{{% blocks/feature icon="fab fa-discord" title="Join the Sensor Watch Discord!" url="https://discord.gg/Rdd9ewREaJ" %}}
+Chat with other Sensor Watch users and get help with your own Sensor Watch build.
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/joeycastillo/Sensor-Watch" %}}
+We do a [Pull Request](https://github.com/joeycastillo/Sensor-Watch/pulls) contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/GoHugoIO" %}}
-For announcement of latest features etc.
+{{% blocks/feature icon="fab fa-twitter" title="Follow along on Twitter!" url="https://twitter.com/josecastillo" %}}
+Get the absolute latest from the developer of Sensor Watch, plus other posts.
 {{% /blocks/feature %}}
 
 
@@ -74,8 +85,8 @@ For announcement of latest features etc.
 
 {{< blocks/section >}}
 
-<div class="col-12">
+<!-- <div class="col-12">
 <h1 class="text-center">This is another Section</h1>
-</div>
+</div> -->
 
 {{< /blocks/section >}}

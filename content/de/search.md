@@ -1,0 +1,5 @@
+---
+title: Suchen
+layout: search
+---
+

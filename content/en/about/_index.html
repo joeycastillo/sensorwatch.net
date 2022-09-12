@@ -1,5 +1,5 @@
 ---
-title: About Goldydocs
+title: About Sensor Watch
 linkTitle: About
 menu:
   main:
@@ -8,31 +8,48 @@ menu:
 ---
 
 
-{{< blocks/cover title="About Goldydocs" image_anchor="bottom" height="min" >}}
+{{< blocks/cover title="About Sensor Watch" image_anchor="bottom" height="min" >}}
 
-<p class="lead mt-5">A sample site using the Docsy Hugo theme.
-</p>
+<p class="lead mt-5">An ARM Cortex M0+ board swap for the classic Casio F-91W wristwatch.</p>
 
 {{< /blocks/cover >}}
 
 {{% blocks/lead %}}
-Goldydocs is a sample site using the <a href="https://github.com/google/docsy">Docsy</a> Hugo theme that shows what it can do and provides you with a template site structure. It’s designed for you to clone and edit as much as you like. See the different sections of the documentation and site for more ideas.
+Sensor Watch is a board replacement for the classic Casio F-91W wristwatch. It is powered by a Microchip SAM L22 microcontroller with built-in segment LCD controller. You can write your own programs for the watch using the provided watch library, program the watch over USB using the built-in UF2 bootloader, and then install the board in your existing watch case to run your own software on your wrist.
+
 {{% /blocks/lead %}}
 
 
 {{< blocks/section >}}
-<div class="col-12">
-<h1 class="text-center">This is another section</h1>
+<div class="col-2"></div>
+<div class="col-8">
+  <h1 class="text-center">Serving Suggestion:</h1>
+  <p><img src="/docs/images/sensor-watch.jpg" alt="Photo: a close-up of the Sensor Watch circuit board, and a wristwatch displaying the word “Hello”" width="100%"></p>
 </div>
-
+<div class="col-2"></div>
 {{< /blocks/section >}}
-
-
 
 {{< blocks/section >}}
 
 <div class="col-12">
-<h1 class="text-center">This is another section</h1>
-</div>
-
+  <h1 class="text-center">Features:</h1>
+  </div>
+  <div class="col-4">
+  </div>
+  <div class="col-4">
+    <ul>
+      <li>ARM Cortex M0+ microcontroller</li>
+      <li>32KHz crystal for real-time clock with alarm function</li>
+      <li>Ten digit segment LCD, plus five indicator segments</li>
+      <li>Three interrupt capable buttons</li>
+      <li>Red / green PWM’able LED backlight</li>
+      <li>Optional piezo buzzer (requires some light soldering)</li>
+      <li>On-board USB Micro B connector</li>
+      <li>Reset button with double-tap UF2 bootloader</li>
+      <li>Nine-pin flex PCB connector</li>
+    </ul>
+  </div>
+  <div class="col-4">
+  </div>
+  
 {{< /blocks/section >}}
