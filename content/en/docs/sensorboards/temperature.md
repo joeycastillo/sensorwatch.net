@@ -1,6 +1,6 @@
 ---
-title: "Sensor Watch Accessory Board: Temperarure + GPIO"
-linkTitle: "Sensor Watch Accessory Board: Temperarure + GPIO"
+title: "Sensor Watch Accessory Board: Temperature + GPIO"
+linkTitle: "Sensor Watch Accessory Board: Temperature + GPIO"
 weight: 8
 ---
 ![Rendering: an L-shaped flex PCB labeled “Temperature+GPIO Sensor Board”](../images/temperature-gpio-sensor-board.png)
