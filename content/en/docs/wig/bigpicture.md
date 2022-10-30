@@ -11,7 +11,7 @@ The Casio F‑91W, the donor watch on which Sensor Watch is based, is one of Cas
 * The three buttons on the watch offer very basic inputs:
     * the “Light” button illuminates the watch face,
     * the “Mode” button cycles through the four modes that the watch offers,
-    * and the “Alarm” button is the only truly multi-function button: it turns the alarms on or off when the alarm face is active, and swaps the main 12/24 hour mode when the main clock is active.
+    * and the “Alarm” button is the only truly multi-function button: it turns the alarms on or off when the alarm face is active, and turns the hourly chime on and off when the main clock is active.
 
 ![Rendering: a Casio F‑91W displaying the time and date (just after noon on Thursday the 9th)](../images/casio-basics.png)
 
