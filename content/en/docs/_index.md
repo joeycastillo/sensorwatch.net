@@ -33,9 +33,10 @@ Recently manufactured watches using this module include:
 | F-91W | yes   | yes          | F-91W (black), F-91WG (black, gold face), F-91WM (coloured case), F-91WC (coloured), F-91WS (translucent) |
 | A158W | yes   | yes          | A158WA (silver, black face), A158WEA (silver, gold face), A158WETG (gold) |
 | A159W |       | yes          | A159WA (silver, black face), A159WGEA (gold, black face), A159WAD (silver, black cut glass face), A159WGED (gold, black cut glass face) |
-| A163W |       |              | A163WA (silver, black face) |
+| A163W | yes   |              | A163WA (silver, black face) |
 | A164W | yes   |              | A164WA (silver, black face) |
 | A171W |       |              | A171WE (silver, black face), A171WEG (gold), A171WEGG (black), A171WEMG (gold) |
+| W-31  | yes   |              | W-31 (vintage, stainless steel case & strap) |
 
 The 'Works' column indicates that someone has successfully transplanted the sensor watch module into that watch.
 The 'Counterfeits' column means that someone has seen probable counterfeits for sale, so extra caution is warranted.
