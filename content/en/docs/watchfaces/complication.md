@@ -79,7 +79,45 @@ TODO
 TOTP Generator
 --------------
 
-TODO
+This watchface generates time based one time passwords (two factor auth codes) allowing you to sign in securely to many popular websites (e.g. Google, Github). Time-based one-time password (TOTP) is a computer algorithm that generates a one-time password (OTP) that uses the current time as a source of uniqueness.
+
+Press the Alarm button to cycle between your configured websites / TOTP secrets.
+
+The watchface supports multiple websites / TOTP secrets, which need to be extracted from TOTP QR codes and added to the source code for the watchface as follows:
+
+1. Obtain a TOTP secret or QR ode from the website you want to generate codes for.
+2. If you have just the QR code, [Stefan Sundin's web site](https://stefansundin.github.io/2fa-qr/) will allow you to extract the secret - it will be an alphanumeric string around 32 characters long, which is the TOTP secret encoded in Base32.
+3. To add the secret to the watchface code, you need to convert it to hexadecimal bytes. This [cryptii.com](https://cryptii.com/pipes/base32-to-hex) page will allow you to do that conversion. Note you'll have to enter your TOTP secret in uppercase.
+4. Finally, you'll need to take the Hexadecimal bytes and add them to the TOTP watchface source code and recompile movement:
+
+### Edit `totp_face.c`
+You may want to remove the demo keys. Assuming you want to add a key to the end of the list:
+
+```
+static const uint8_t num_keys = 2;
+```
+Add one to the number on this line.
+
+```
+static uint8_t keys[] = {
+   // Add the hex bytes for your key
+};
+```
+Add the hexadecimal bytes from step 3 to the end of this array, comma separated and each one preceeded by `0x`. Don't forget to add a comma after the previous final byte.
+```
+static const uint8_t key_sizes[] = {
+```
+Add the size of your secret (the number of hex bytes you just added) to the end of this array.
+```
+static const uint32_t timesteps[] = {
+```
+Add another `30` entry to the end of this array.
+```
+static const char labels[][2] = {
+```
+Add a label for your secret... E.g. if it's for your Google account you might want to add `{ 'g', 'o' }` as a friendly label.
+
+That's it - enjoy the convenience of TOTP codes on your wrist!
 
 Day One
 -------
