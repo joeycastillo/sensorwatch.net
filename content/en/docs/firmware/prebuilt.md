@@ -11,10 +11,11 @@ Note that each fimware comes in two flavors, depending on the color of your circ
 
 Also note that all of these have the "Preferences" and "Time Set" screens at the end; for brevity they aren't included in this listing, but you will always have access to them.
 
-* [Movement Standard](#movement-standard): Simple Clock, World Clock, Sunrise/Sunset, Moon Phase, Temperature
+* [Movement Standard Edition](#movement-standard): Simple Clock, World Clock, Sunrise/Sunset, Moon Phase, Stopwatch
+* [Movement Backer Edition](#movement-backer-edition-with-temperature-display): Simple Clock, World Clock, Sunrise/Sunset, Moon Phase, Temperature
 * [Focus](#focus): Simple Clock, Tomato Timer, Stopwatch, Countdown
 * [The Athlete](#the-athlete): Simple Clock, Stopwatch, Countdown, Exercise Counter, Pulsometer
-* [The Backpacker](#the-backpacker): Simple Clock, Sunrise/Sunset, Temperature, Temperature Log, Blinky Light
+* [The Backpacker](#the-backpacker): Simple Clock, Sunrise/Sunset, Moob Phase, Temperature, Temperature Log, Blinky Light
 * [The Stargazer](#the-stargazer): Simple Clock, Astronomy, Sunrise/Sunset, Moon Phase
 * [Deep Space Now](#deep-space-now): Simple Clock, Mars Time, World Clock x3
 * [alt.time](#alttime): Simple Clock, Beat Time, Day One
@@ -22,9 +23,26 @@ Also note that all of these have the "Preferences" and "Time Set" screens at the
 Movement Standard
 -----------------
 
+This is the standard firmware for Movement. It's packed, but not jam-packed: 
+
+* Simple Clock - A basic clock with date for timekeeping.
+* World Clock - You can configure this with a custom two-letter title and any time zone.
+* Sunrise/Sunset - Local sunrise and sunset times.
+* Moon Phase - Tonight's moon phase. (press Alarm to see days in the future)
+* Stopwatch (by Wesley Ellis) - A simple stopwatch with one-second resolution.
+
+Download it now: for [Green Boards](/docs/firmware/download/standard-green.uf2) and [Blue Boards](/docs/firmware/download/standard-blue.uf2)
+
+Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/standard/)
+
+Movement: Backer Edition (with temperature display)
+---------------------------------------------------
+
 **Required Sensor Board:** Temperature Sensor
 
-This is the standard firmware for Movement. It's packed, but not jam-packed: 
+The first Sensor Watch boards that shipped were with orders that automatically included a temperature sensor board. As such, the set of watch faces that shipped with those boards included a temperature display.
+
+Post-campaign, the temperature sensor board was optional, so we replaced the temperature display with a stopwatch. If you bought a temperature sensor board and wish to have a temperature display, use this firmware; it's identical to the standard firmware, but replaces the stopwatch with a temperature display.
 
 * Simple Clock - A basic clock with date for timekeeping.
 * World Clock - You can configure this with a custom two-letter title and any time zone.
@@ -32,9 +50,9 @@ This is the standard firmware for Movement. It's packed, but not jam-packed:
 * Moon Phase - Tonight's moon phase. (press Alarm to see days in the future)
 * Temperature - As measured from the temperature sensor board. (Alarm toggles C or F)
 
-Download it now: for [Green Boards](/docs/firmware/download/standard-green.uf2) and [Blue Boards](/docs/firmware/download/standard-blue.uf2)
+Download it now: for [Green Boards](/docs/firmware/download/backer-green.uf2) and [Blue Boards](/docs/firmware/download/backer-blue.uf2)
 
-Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/standard/)
+Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/backer/)
 
 Focus
 -----
