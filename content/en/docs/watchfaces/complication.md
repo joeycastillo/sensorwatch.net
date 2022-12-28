@@ -88,6 +88,10 @@ The watchface supports multiple websites / TOTP secrets, which need to be extrac
 1. Obtain a TOTP secret or QR ode from the website you want to generate codes for.
 2. If you have just the QR code, [Stefan Sundin's web site](https://stefansundin.github.io/2fa-qr/) will allow you to extract the secret - it will be an alphanumeric string around 32 characters long, which is the TOTP secret encoded in Base32.
 3. To add the secret to the watchface code, you need to convert it to hexadecimal bytes. This [cryptii.com](https://cryptii.com/pipes/base32-to-hex) page will allow you to do that conversion. Note you'll have to enter your TOTP secret in uppercase.
+Shell tools can be used to convert secret to bytes:
+```sh
+echo "KRUGKIDROVUWG2ZAMJZG653OEBTG66BANJ2W24DTEBXXMZLSEB2GQZJANRQXU6JAMRXWOLQ=" | base32 -d | xxd -i
+```
 4. Finally, you'll need to take the Hexadecimal bytes and add them to the TOTP watchface source code and recompile movement:
 
 ### Edit `totp_face.c`
