@@ -24,7 +24,7 @@ Install the cross-compiling toolchain on MacOS
 
 * Download the [GNU ARM Embedded Toolchain for 64-bit MacOS](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-mac.pkg?rev=b382d51ec8d34c3fa421cf57ce97f146&hash=86689FEB39DA7A381FF78A2E70F7ABCE)
 * Double-click the installer and follow the prompts to install the toolchain
-* Add the toolchain to your PATH: `export PATH="$PATH:/Applications/ARM/bin`
+* Add the toolchain to your PATH: `export PATH="$PATH:/Applications/ARM/bin"`
 
 Note: if you want, you can add the above PATH export to your shell's startup script to make it persist between shell invocations
 
