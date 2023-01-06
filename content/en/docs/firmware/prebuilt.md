@@ -15,7 +15,7 @@ Also note that all of these have the "Preferences" and "Time Set" screens at the
 * [Movement Backer Edition](#movement-backer-edition-with-temperature-display): Simple Clock, World Clock, Sunrise/Sunset, Moon Phase, Temperature
 * [Focus](#focus): Simple Clock, Tomato Timer, Stopwatch, Countdown
 * [The Athlete](#the-athlete): Simple Clock, Stopwatch, Countdown, Exercise Counter, Pulsometer
-* [The Backpacker](#the-backpacker): Simple Clock, Sunrise/Sunset, Moob Phase, Temperature, Temperature Log, Blinky Light
+* [The Backpacker](#the-backpacker): Simple Clock, Sunrise/Sunset, Moon Phase, Temperature, Temperature Log, Blinky Light
 * [The Stargazer](#the-stargazer): Simple Clock, Astronomy, Sunrise/Sunset, Moon Phase
 * [Deep Space Now](#deep-space-now): Simple Clock, Mars Time, World Clock x3
 * [alt.time](#alttime): Simple Clock, Beat Time, Day One
