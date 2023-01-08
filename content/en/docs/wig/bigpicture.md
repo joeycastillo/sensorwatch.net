@@ -28,7 +28,7 @@ Let’s look at some of the watch faces that come with Sensor Watch to see how t
 The Temperature Watch Face
 --------------------------
 
-![Rendering: a temperature display app, showing the curent temperature of 68.7 degrees Fahrenheit](../images/temperature-app.png)
+![Rendering: a temperature display app, showing the current temperature of 68.7 degrees Fahrenheit](../images/temperature-app.png)
 
 This is the Temperature watch face. It displays the current temperature, as read from a thermistor voltage divider on a Sensor Watch accessory board.
 

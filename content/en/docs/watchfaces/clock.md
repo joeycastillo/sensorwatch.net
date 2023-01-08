@@ -44,7 +44,7 @@ This watch face is dedicated to Martian timekeeping. It has several modes, and c
 * ZH - Local mean solar time for the Zhurong rover
 * PE - LMST for the Perseverance rover
 * IN - LMST for the Insight lander
-* CU - LMST for the Curiousity rover
+* CU - LMST for the Curiosity rover
 
 Press the Light button to toggle between displaying time and date:
 
@@ -52,6 +52,6 @@ Press the Light button to toggle between displaying time and date:
 * ZH Sol - Mission sol for the Zhurong rover
 * PE Sol - Mission sol for the Perseverance rover
 * IN S - Mission sol for the InSight lander
-* CU S - Mission sol for the Curiousity rover
+* CU S - Mission sol for the Curiosity rover
 
 Note that where the mission sol is below 1000, this watch face displays the word “Sol” on the bottom line. When the mission sol is over 1000, the word “Sol” will not fit and so it displays a stylized letter S at the top right.
