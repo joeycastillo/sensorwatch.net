@@ -3,7 +3,7 @@ title: "Sensor Watch Accessory Board: Temperature + GPIO"
 linkTitle: "Sensor Watch Accessory Board: Temperature + GPIO"
 weight: 8
 ---
-![Rendering: an L-shaped flex PCB labeled “Temperature+GPIO Sensor Board”](../images/temperature-gpio-sensor-board.png)
+![Rendering: an L-shaped flex PCB labelled “Temperature+GPIO Sensor Board”](../images/temperature-gpio-sensor-board.png)
 
 This sensor board shipped (or will ship) to all Sensor Watch Crowd Supply backers. It is also available for separate purchase at the Sensor Watch page on Crowd Supply.
 
@@ -12,7 +12,7 @@ Temperature
 
 The Temperature and GPIO board includes two passive components on the front, a very precise 10 kΩ resistor and a 10 kΩ thermistor, that together form a voltage divider. While the resistance of the 10 kΩ resistor stays very close to 10 kΩ at all temperatures, the thermistor's resistance goes down as the temperature rises, and goes up as the temperature falls. This changes the voltage that's measured at the middle of the voltage divider, and with some clever math, we can turn that voltage into a very precise temperature reading.
 
-While the watch library's thermistor driver is preconfigured with all required parameters for this calculation, we'll repeat them here for completeness: 
+While the watch library's thermistor driver is preconfigured with all required parameters for this calculation, we'll repeat them here for completeness:
 
 * The resistor has a value of 10 kilo-ohms with a tolerance of 0.1%
 * The thermistor has a nominal value of 10 kilo-ohms at 25° C, and a B coefficient of 3380K
