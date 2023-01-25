@@ -9,7 +9,7 @@ Install the cross-compiling toolchain on Linux
 
 * Ubuntu: `apt install gcc-arm-none-eabi`
 
-* Archlinux: `pacman -S arm-none-eabi-gcc`
+* Archlinux: `pacman -S arm-none-eabi-gcc arm-none-eabi-newlib`
 
 Other Linux:
 
