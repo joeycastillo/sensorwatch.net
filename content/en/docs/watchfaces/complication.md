@@ -8,8 +8,11 @@ In horology, a complication is an additional set of gears in a mechanical watch 
  * [Sunrise/Sunset](#sunrisesunset)
  * [Moon Phase](#moon-phase)
  * [Stopwatch](#stopwatch)
+ * [Stock Stopwatch](#stock-stopwatch)
  * [Countdown](#countdown)
  * [Counter](#counter)
+ * [Interval](#interval)
+ * [Alarm](#alarm)
  * [Pulsometer](#pulsometer)
  * [Tomato Productivity Timer](#tomato-productivity-timer)
  * [TOTP Generator](#totp-generator)
@@ -33,6 +36,8 @@ A short press on the Alarm button will advance to the following sunrise or sunse
 
 If you made a mistake while entering your location, or if you simply wish to change your location, you can re-enter location setting mode with another long press on the Alarm button.
 
+[\[Back to top\]](#complications)
+
 Moon Phase
 ----------
 
@@ -44,10 +49,29 @@ All segments turn off during a new moon.
 
 On this screen you may press the Alarm button repeatedly to move forward in time: the day of the month at the top right will advance by one day for each button press, and both the text and the graphical representation will display the moon phase for that day. Try pressing the Alarm button 27 times now, just to visualize what the moon will look like over the next month.
 
+[\[Back to top\]](#complications)
+
 Stopwatch
 ---------
 
-TODO
+The Stopwatch face provides basic stopwatch functionality: you can start and stop the stopwatch with the alarm button. Pressing the light button when the timer is stopped resets it. This face does not count sub-seconds.
+
+[\[Back to top\]](#complications)
+
+Stock Stopwatch
+---------------
+
+The Stock Stopwatch face implements the original F-91W stopwatch functionality including counting hundredths of seconds and lap timing. 
+* Use the alarm button to start and stop the stopwatch.
+* Pressing the light button on a running timer shows the lap time. (The stopwatch continues running in the background, indicated by a blinking colon.)
+* Pressing the light button when the lap time is shown switches back to the running stopwatch.
+* Pressing the light button when the timekeeping is stopped resets the stopwatch.
+
+There are two improvements compared to the original F-91W: 
+1. When reaching 59:59 the counter does not simply jump back to zero, but keeps track of hours in the upper right hand corner. (Up to 24h)
+2. Long pressing the light button toggles the led behaviour: it either turns on on each button press or it doesn't.
+
+[\[Back to top\]](#complications)
 
 Countdown
 ---------
@@ -58,6 +82,65 @@ Counter
 -------
 
 TODO
+
+Interval
+--------
+
+The Interal face provides 9 customizable interval timers, which can be used for hit training device and/or for time management techniques.
+
+- To cycle through the 9 interval timers, press the alarm button (short press). For each timer slot the relevant details for esch timer phase are shown in a "carousel" (see below).
+
+- To start an interval timer, press and hold the alarm button.
+
+- To pause a running timer, press the alarm button (short press).
+
+- To completely abort a running timer, press and hold the alarm button.
+
+- Press and hold the light button to enter settings mode for the current interval timer. Short pressing the light button cycles through the settings of each timer.
+
+- Each interval timer has 1 to 4 phases of customizable length like so:\
+`(1) prepare/warm up --> (2) work --> (3) break --> (4) cool down`\
+When setting up or running a timer, each of these phases is indicated by the letters "PR" (prepare), "WO" (work), "BR" (break), or "CD" (cool down).
+
+- Each of these phases is optional, you can set the corresponding minutes and seconds to zero. If you want to use the timer, at least one phase needs to be set to a non-zero value.
+
+- You can define the number of rounds either only for the work phase and/or for the combination of work + break phase. Let's say you want an interval timer that counts 3 rounds of 30 seconds work, followed by 20 seconds rest, like so:\
+    work 30s --> work 30s --> work 30s --> break 20s\
+You can do this by setting 30s for the "WO"rk phase and setting a 3 in the lower right hand corner of the work page. The "LAP" indicator lights up at this position, to explain that we are setting laps here. After that, set the "BR"eak phase to 20s and leave the rest as it is.
+
+- If you want to set up a certain number of "full rounds", consisting of work phase(s) plus breaks, you can do so at the "BR"eak page. The number in the lower right hand corner determines the number of full rounds to be counted. A "-" means that there is no limit and the timer keeps alternating between work and break phases.
+
+- This watch face comes with several pre-defined interval timers, suitable for hiit training (timer slots 1 to 4) as well as doing work according to the pomodoro principle (timer slots 5 to 6). Feel free to adjust the timer slots to your own needs (or completely wipe them).
+
+[\[Back to top\]](#complications)
+
+Alarm
+-----
+
+The Alarm face implements 16 customizable alarms on the sensor watch.
+
+Usage:
+- In normal mode, the alarm button cycles through all 16 alarms. 
+- Pressing the alarm button long in normal mode toggles the corresponding alarm on or off.\
+(Whereas pressing the alarm button extra long jumps back to the first alarm.)
+- Pressing the light button enters settings mode and cycles through the settings of each alarm.\
+(Long pressing the light button enters settings mode without illuminating the led.)
+- In settings mode an alarm slot is selected by pressing the alarm button when the slot number 
+in the upper right corner is blinking.
+- For each alarm slot, you can select the day. These are the day modes:
+   - ED = the alarm rings every day
+   - 1t = the alarm fires only one time and is erased afterwards
+   - MF = the alarm fires Mondays to Fridays
+   - WN = the alarm fires on weekends (Sa/Su)
+   - MO to SU = the alarm fires only on the given day of week
+- You can fast cycle through hours or minutes by holding the alarm button.
+- You can select the tone in which the alarm is played. (Three pitch levels available.)
+- You can select how many "beep rounds" are played for each alarm. 1 to 9 rounds, plus extra 
+long ('L') and extra short ('o') alarms.
+- The simple watch face indicates if any alarm is set within the next 24h by showing the signal
+indicator.
+
+[\[Back to top\]](#complications)
 
 Pulsometer
 ----------
@@ -71,10 +154,14 @@ Two notes:
 1. For the first few seconds of a measurement, the display will read “Hi”. This indicates that it's too early for the measured value to be a valid heart rate. Once the measurement is below 240 bpm, the display will update.
 2. If you hold the button down for more than 45 seconds, the display will read “Lo”. If it took this long for you to count 30 heartbeats, this indicates that your heart rate is below 40 beats per minute.
 
+[\[Back to top\]](#complications)
+
 Tomato Productivity Timer
 -------------------------
 
 TODO
+
+[\[Back to top\]](#complications)
 
 TOTP Generator
 --------------
@@ -123,6 +210,9 @@ Add a label for your secret... E.g. if it's for your Google account you might wa
 
 That's it - enjoy the convenience of TOTP codes on your wrist!
 
+
+[\[Back to top\]](#complications)
+
 Day One
 -------
 
@@ -131,6 +221,8 @@ This watch face displays the number of days since a given date. It was originall
 Long press on the Alarm button to enter customization mode. The text "YR" will appear, and will allow you to set the year starting from 1959. Press Alarm repeatedly to advance the year. If your birthday is before 1959, advance beyond the current year and it will wrap around to 1900. Once you have set the year, press Light to set the month ("MO") and day ("DA"), advancing the value by pressing Alarm repeatedly.
 
 Note that at this time, the Day One face does not display the sleep indicator in sleep mode, which may make the watch appear to be unresponsive in sleep mode. You can still press the Alarm button to wake the watch. This UI quirk will be addressed in a future update.
+
+[\[Back to top\]](#complications)
 
 Blinky Light
 ------------
@@ -142,6 +234,8 @@ The screen displays the name of the watch face (”BL”), as well as an S at th
 **Note that this will chew through your battery!** The green LED uses about 450µA at full brightness, which is 45 times the normal power consumption of the watch. The red LED is an order of magnitude less efficient (4500 µA), and the yellow setting lights both LEDs, which chews through nearly 5 milliamperes. This means that one hour of yellow blinking is likely to eat up between 2 and 3 percent of the battery's usable life! Still, if you need to signal your location to someone in a dark forest, this watch face could come in handy.
 
 Just try to use the green LED as much as you can.
+
+[\[Back to top\]](#complications)
 
 Astronomy
 ---------
@@ -172,6 +266,8 @@ When the calculation is complete, the screen will display the altitude (“aL”
 
 Long press on the Alarm button to select another celestial body.
 
+[\[Back to top\]](#complications)
+
 Orrery
 ------
 
@@ -194,3 +290,5 @@ Note that the sun is not available in this menu, as the sun is always at (0,0,0)
 Long press on the Alarm button to calculate the planet's location, and after a flashing “C” (for Calculating), you will be presented with the planet's X coordinate in astronomical units. Short press Alarm to cycle through the X, Y and Z coordinates, and then long press Alarm to return to planet selection.
 
 The large numbers represent the whole number part, and the two smaller numbers (in the seconds place) represent the decimal portion. So if you see “SA X 7<small>36</small>” and “SA Y -6<small>62</small>”, you can read that as an X coordinate of 7.36 AU and a Y coordinate of -6.62 AU. You can literally draw a dot at (0, 0) to represent the sun, and a dot at (7.36, -6.62) to represent Saturn. (the Z coordinates tend to be pretty close to zero, as the planets largely orbit on a single plane, the ecliptic)
+
+[\[Back to top\]](#complications)
