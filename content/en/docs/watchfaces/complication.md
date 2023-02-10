@@ -20,6 +20,7 @@ In horology, a complication is an additional set of gears in a mechanical watch 
  * [Blinky Light](#blinky-light)
  * [Astronomy](#astronomy)
  * [Orrery](#orrery)
+ * [Invaders](#invaders)
 
 Sunrise/Sunset
 --------------
@@ -266,3 +267,24 @@ Note that the sun is not available in this menu, as the sun is always at (0,0,0)
 Long press on the Alarm button to calculate the planet's location, and after a flashing “C” (for Calculating), you will be presented with the planet's X coordinate in astronomical units. Short press Alarm to cycle through the X, Y and Z coordinates, and then long press Alarm to return to planet selection.
 
 The large numbers represent the whole number part, and the two smaller numbers (in the seconds place) represent the decimal portion. So if you see “SA X 7<small>36</small>” and “SA Y -6<small>62</small>”, you can read that as an X coordinate of 7.36 AU and a Y coordinate of -6.62 AU. You can literally draw a dot at (0, 0) to represent the sun, and a dot at (7.36, -6.62) to represent Saturn. (the Z coordinates tend to be pretty close to zero, as the planets largely orbit on a single plane, the ecliptic)
+
+Invaders
+--------
+
+The Invaders watch face is an authentic remake of the "famous" number invaders game, found on the Casio calculator wristwatches CA-85 or CA-851.
+
+How to play:
+
+- Press the alarm button to start the game. "Invaders" (just digits, tbh) will start coming in from the right hand side.
+- Press the light button to "aim". The digit on the top of the display cycles from 0 to 9. 
+- If your aiming digit is identical to one of the invaders, press the alarm button to "shoot". The corresponding invader will disappear.
+- If the invaders reach beneath the very first position, you loose one defense line. When all three defense lines are gone, the game is over.
+- Also: If you shoot more than 29 times per wave, you loose the game.
+- There are 16 invaders per wave. There is a short break between waves.
+- Long pressing the light button toggles sound on or off. (Not while playing.)
+
+The "n" invaders are ufos!
+
+Whenever the sum of all invaders shot is divisible by 10 the next invader will be an ufo, represented by the n-symbol. Shooting a ufo gets you extra points. Example: shoot 2, 5, 3 --> ufo next
+
+As for points: the earlier you shoot an invader, the more points you get.
