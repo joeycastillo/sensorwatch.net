@@ -67,7 +67,7 @@ static void _blink_face_update_lcd(blink_state_t *state) {
 
 The `watch_display_string` function then displays it in the ten positions available on the watch:
 
-![Rendering: an L-shaped flex PCB labelled “Temperature+GPIO Sensor Board”](../images/blink-face.png)
+![Rendering: an L-shaped flex PCB labeled “Temperature+GPIO Sensor Board”](../images/blink-face.png)
 
 Almost there! Next, we write our loop. This is where the action happens!
 

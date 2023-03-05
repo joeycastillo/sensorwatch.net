@@ -3,7 +3,7 @@ title: "Sensor Watch Accessory Board: Temperature + GPIO"
 linkTitle: "Sensor Watch Accessory Board: Temperature + GPIO"
 weight: 8
 ---
-![Rendering: an L-shaped flex PCB labelled “Temperature+GPIO Sensor Board”](../images/temperature-gpio-sensor-board.png)
+![Rendering: an L-shaped flex PCB labeled “Temperature+GPIO Sensor Board”](../images/temperature-gpio-sensor-board.png)
 
 This sensor board shipped (or will ship) to all Sensor Watch Crowd Supply backers. It is also available for separate purchase at the Sensor Watch page on Crowd Supply.
 

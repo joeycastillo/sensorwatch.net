@@ -3,7 +3,7 @@ title: "Sensor Watch Accessory Boards (aka Sensor Boards)"
 linkTitle: "Sensor Watch Accessory Boards (aka Sensor Boards)"
 weight: 40
 ---
-![Rendering: an L-shaped flex PCB labelled “Sensor Watch Environment”](images/sensor-board.png)
+![Rendering: an L-shaped flex PCB labeled “Sensor Watch Environment”](images/sensor-board.png)
 
 You may have noticed that there are no sensors on this board. That is by design: rather than pick sensors for you, the goal is to add a tiny flexible PCB with the sensors YOU want, and interface them over the nine-pin connector. The connector provides the following options for power and connectivity:
 
