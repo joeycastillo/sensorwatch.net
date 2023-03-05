@@ -7,7 +7,7 @@ In this document, we’re going to describe designing a single watch face for Mo
 
 We’ll start by generating a header and an implementation for our blink watch face. First, open a terminal and navigate to the movement/template directory: `cd movement/template/`.
 
-You can create a watch face in any of the major categories of watch face that Movement offers: 
+You can create a watch face in any of the major categories of watch face that Movement offers:
 
 * `clock` faces tend to display the time, whether in a standard time system like a world clock or an alternative system like decimal time. The standard clock, Mars time and beat time all fit in this category.
 * `complication` faces tend to display some non-time information, but don't generally require any data other than user input or the time. Sunrise, TOTP generation and dice rolling all fit into this category.
@@ -15,7 +15,7 @@ You can create a watch face in any of the major categories of watch face that Mo
 * `settings` faces are watch faces that involve configuring the watch.
 * `demo` faces are faces that involve demonstrating or testing functionality.
 
-Once you know the category of watch face you're building — blink is pretty clearly a complication — create the watch face files with the command `python3 watch_face.py complication blink` in a terminal window. That generates two files in the watch-faces/complication folder, called `blink_face.h` and `blink_face.c`. It also adds the watch face to both Movement's Makefile and its include files. 
+Once you know the category of watch face you're building — blink is pretty clearly a complication — create the watch face files with the command `python3 watch_face.py complication blink` in a terminal window. That generates two files in the watch-faces/complication folder, called `blink_face.h` and `blink_face.c`. It also adds the watch face to both Movement's Makefile and its include files.
 
 Take a look at `blink_face.h`. Watch faces in Movement are just plain old C, and we’ll implement our blink watch face in the four functions that script has generated for us:
 
@@ -54,7 +54,7 @@ void blink_face_activate(movement_settings_t *settings, void *context) {
 }
 {{< /highlight >}}
 
-Before we declare our loop function, I’m going to add a little helper function to update the LCD. This just takes the state of our watch face, and translates it to letters on the LCD. This function formats a ten-character string that looks something like this: "BL F Green". The wearer can read that as "Blink face, fast blink, green LED". 
+Before we declare our loop function, I’m going to add a little helper function to update the LCD. This just takes the state of our watch face, and translates it to letters on the LCD. This function formats a ten-character string that looks something like this: "BL F Green". The wearer can read that as "Blink face, fast blink, green LED".
 
 {{< highlight c >}}
 static void _blink_face_update_lcd(blink_state_t *state) {
@@ -137,7 +137,7 @@ case EVENT_ALARM_LONG_PRESS:
     break;
 {{< /highlight >}}
 
-Finally, we need to blink the light! We’ll use the tick event for that. Movement issues this event every time the clock ticks. Normally that’s once a second, but watch faces can request a faster tick, like we did above when setting the blinking state to active. We’ll use this tick function to toggle the LED off on even numbered ticks, and on on odd numbered ticks:
+Finally, we need to blink the light! We’ll use the tick event for that. Movement issues this event every time the clock ticks. Normally that’s once a second, but watch faces can request a faster tick, like we did above when setting the blinking state to active. We’ll use this tick function to toggle the LED off on even numbered ticks, and on odd numbered ticks:
 
 {{< highlight c >}}
 case EVENT_TICK:

@@ -139,7 +139,7 @@ The Pulsometer is an implementation of a sort of a classic mechanical watch comp
 
 The pulsometer on Sensor Watch flashes its instructions at launch: “Hold Alarm + count 30 beats.” Using the hand on the side where you wear your watch, touch your carotid artery (in your neck) and feel for your pulse. Once you find it, use your other hand to press and hold the Alarm button, and count your heartbeats. When you reach 30 beats, release the Alarm button. The display will show a number such as “60 bpm”; this is your heart rate in beats per minute.
 
-Two notes: 
+Two notes:
 
 1. For the first few seconds of a measurement, the display will read “Hi”. This indicates that it's too early for the measured value to be a valid heart rate. Once the measurement is below 240 bpm, the display will update.
 2. If you hold the button down for more than 45 seconds, the display will read “Lo”. If it took this long for you to count 30 heartbeats, this indicates that your heart rate is below 40 beats per minute.
@@ -152,7 +152,7 @@ TODO
 TOTP Generator
 --------------
 
-This watchface generates time based one time passwords (two factor auth codes) allowing you to sign in securely to many popular websites (e.g. Google, Github). Time-based one-time password (TOTP) is a computer algorithm that generates a one-time password (OTP) that uses the current time as a source of uniqueness.
+This watchface generates time based one time passwords (two factor auth codes) allowing you to sign in securely to many popular websites (e.g. Google, GitHub). Time-based one-time password (TOTP) is a computer algorithm that generates a one-time password (OTP) that uses the current time as a source of uniqueness.
 
 Press the Alarm button to cycle between your configured websites / TOTP secrets.
 
@@ -234,7 +234,7 @@ When you arrive at the Astronomy watch face, you'll see its name (“Astro”) a
 * UR - Uranus
 * NE - Neptune
 
-Once you've selected the celestial body whose parameters you wish to calculate, long press the Alarm button and relase it. The letter “C” will flash while the calculation is performed.
+Once you've selected the celestial body whose parameters you wish to calculate, long press the Alarm button and release it. The letter “C” will flash while the calculation is performed.
 
 When the calculation is complete, the screen will display the altitude (“aL”) of the celestial body. You can cycle through the available parameters with repeated short presses on the Alarm button:
 
