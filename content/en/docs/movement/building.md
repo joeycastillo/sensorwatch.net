@@ -7,7 +7,7 @@ weight: 30
 Install the cross-compiling toolchain on Linux
 ----------------------------------------------
 
-* Ubuntu: `apt install gcc-arm-none-eabi`
+* Debian/Ubuntu: `apt install gcc-arm-none-eabi libnewlib-arm-none-eabi`
 
 * Archlinux: `pacman -S arm-none-eabi-gcc arm-none-eabi-newlib`
 
@@ -41,3 +41,6 @@ The built firmware will be at `build/watch.uf2`. You can now [flash](/docs/firmw
 ----------------------------------------------
 
 The list of included watchfaces can be found in the `watch_faces` array in `movement/movement_config.h`. Simply add, remove, and/or rearrange faces in this list to your liking and re-compile/re-flash your firmware.
+
+You can also use the unofficial [online firmware builder](https://sensor-watch-builder.fly.dev/)
+to build both the watch firmware and the emulator.

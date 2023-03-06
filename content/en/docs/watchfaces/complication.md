@@ -21,6 +21,7 @@ In horology, a complication is an additional set of gears in a mechanical watch 
  * [Astronomy](#astronomy)
  * [Orrery](#orrery)
  * [Invaders](#invaders)
+ * [RPN Calculator](#rpn-calculator)
 
 Sunrise/Sunset
 --------------
@@ -138,7 +139,7 @@ The Pulsometer is an implementation of a sort of a classic mechanical watch comp
 
 The pulsometer on Sensor Watch flashes its instructions at launch: “Hold Alarm + count 30 beats.” Using the hand on the side where you wear your watch, touch your carotid artery (in your neck) and feel for your pulse. Once you find it, use your other hand to press and hold the Alarm button, and count your heartbeats. When you reach 30 beats, release the Alarm button. The display will show a number such as “60 bpm”; this is your heart rate in beats per minute.
 
-Two notes: 
+Two notes:
 
 1. For the first few seconds of a measurement, the display will read “Hi”. This indicates that it's too early for the measured value to be a valid heart rate. Once the measurement is below 240 bpm, the display will update.
 2. If you hold the button down for more than 45 seconds, the display will read “Lo”. If it took this long for you to count 30 heartbeats, this indicates that your heart rate is below 40 beats per minute.
@@ -151,7 +152,7 @@ TODO
 TOTP Generator
 --------------
 
-This watchface generates time based one time passwords (two factor auth codes) allowing you to sign in securely to many popular websites (e.g. Google, Github). Time-based one-time password (TOTP) is a computer algorithm that generates a one-time password (OTP) that uses the current time as a source of uniqueness.
+This watchface generates time based one time passwords (two factor auth codes) allowing you to sign in securely to many popular websites (e.g. Google, GitHub). Time-based one-time password (TOTP) is a computer algorithm that generates a one-time password (OTP) that uses the current time as a source of uniqueness.
 
 Press the Alarm button to cycle between your configured websites / TOTP secrets.
 
@@ -233,7 +234,7 @@ When you arrive at the Astronomy watch face, you'll see its name (“Astro”) a
 * UR - Uranus
 * NE - Neptune
 
-Once you've selected the celestial body whose parameters you wish to calculate, long press the Alarm button and relase it. The letter “C” will flash while the calculation is performed.
+Once you've selected the celestial body whose parameters you wish to calculate, long press the Alarm button and release it. The letter “C” will flash while the calculation is performed.
 
 When the calculation is complete, the screen will display the altitude (“aL”) of the celestial body. You can cycle through the available parameters with repeated short presses on the Alarm button:
 
@@ -288,3 +289,84 @@ The "n" invaders are ufos!
 Whenever the sum of all invaders shot is divisible by 10 the next invader will be an ufo, represented by the n-symbol. Shooting a ufo gets you extra points. Example: shoot 2, 5, 3 --> ufo next
 
 As for points: the earlier you shoot an invader, the more points you get.
+
+RPN Calculator
+--------------
+
+The calculator uses [RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation) notation. So instead of using infix operators, the operators always follow the parameters.
+
+Example: To calculate `4 - 3` one would enter `4 3 -`
+
+Using this notation also does not require any braces, so instead of `2 * (3 - 2)` one would enter `2 3 2 - *`.
+
+The parameters are put on to a stack, which currently has a size of 4. So if one enters `2 3 2 - *` the stack would contain `2 3 2 0`. The subtraction then uses the first two values from the stack and pushes the result back on the stack, which leaves `1 2 0 0`. The multiplication then uses the next two values from the stack and pushes the end result: `2 0 0 0`.
+
+### Normal mode
+
+In normal mode the top of the stack is displayed (initially zero), which usually represents the result of the calculation.
+- `ALARM` enters number mode
+- `LIGHT` enters operator mode
+- `MODE` switches to the next watch face
+
+### Number mode
+
+Number mode pushes a new parameter on the stack. The first four digits are whole numbers, the last two (smaller) digits are decimals.
+- `LIGHT` cycles through digits
+- `ALARM` increases the selected digit
+- `MODE` pushes the parameter on the stack (and goes back to normal mode)
+
+### Operation mode
+
+Operation mode executes operations on the stack. Parameters are taken from the stack and the result is pushed back. If there aren't enough parameters on the stack, the calculator will go into error mode.
+
+The display shows the current selected operation.
+- `LIGHT` cycles through the available operations
+- `ALARM` executes the selected operation (and goes back to normal mode, which will display the result)
+
+Currently implemented operations:
+- add (2 params)
+- sub (2 params)
+- mul (2 params)
+- div (2 params)
+- pow (2 params)
+- sqrt (1 param)
+- pi (0 params, will just push pi onto the stack)
+
+### Error mode
+
+An error has happened (currently only caused by too few parameters on the stack).
+- `ALARM` goes back to normal mode
+- `MODE` switches to the next watch face
+
+### Example
+
+To calculate the following equation:
+
+`2 * (3 - 2)`
+
+which would be the following in RPN notation:
+
+`2 3 2 - *`
+
+the following button presses are needed:
+
+- `ALARM` enter number mode
+- `ALARM` 1
+- `ALARM` 2
+- `MODE` push number, back to normal mode
+- `ALARM` enter number mode
+- `ALARM` 1
+- `ALARM` 2
+- `ALARM` 3
+- `MODE` push number, back to normal mode
+- `ALARM` enter number mode
+- `ALARM` 1
+- `ALARM` 2
+- `MODE` push number, back to normal mode
+- `LIGHT` enter operation mode
+- `LIGHT` change operation to sub
+- `ALARM` execute sub, back to normal mode
+- `LIGHT` enter operation mode
+- `LIGHT` change operation to mul
+- `ALARM` execute mul, back to normal mode
+

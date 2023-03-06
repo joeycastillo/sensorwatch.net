@@ -7,7 +7,7 @@ This section contains the stock firmware for Sensor Watch, as well as several pr
 
 ### Prebuilt Firmwares
 
-Note that each fimware comes in two flavors, depending on the color of your circuit board. This is because blue boards have a red/blue LED and green boards have a red/green LED, and the pins are swapped. No damage will result from loading the wrong firmware onto your board, but the LED colors will be wrong. 
+Note that each firmware comes in two flavors, depending on the color of your circuit board. This is because blue boards have a red/blue LED and green boards have a red/green LED, and the pins are swapped. No damage will result from loading the wrong firmware onto your board, but the LED colors will be wrong. 
 
 Also note that all of these have the "Preferences" and "Time Set" screens at the end; for brevity they aren't included in this listing, but you will always have access to them.
 
@@ -23,7 +23,7 @@ Also note that all of these have the "Preferences" and "Time Set" screens at the
 Movement Standard
 -----------------
 
-This is the standard firmware for Movement. It's packed, but not jam-packed: 
+This is the standard firmware for Movement. It's packed, but not jam-packed:
 
 * Simple Clock - A basic clock with date for timekeeping.
 * World Clock - You can configure this with a custom two-letter title and any time zone.
