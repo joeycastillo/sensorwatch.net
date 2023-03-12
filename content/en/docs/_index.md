@@ -35,7 +35,7 @@ Watches using this module include:
 | A159W | ✅     | ⚠️            | A159WA (silver, black face), A159WGEA (gold, black face), A159WAD (silver, black cut glass face), A159WGED (gold, black cut glass face) |
 | A163W | ✅     |              | A163WA (silver, black face) |
 | A164W | ✅     |              | A164WA (silver, black face) |
-| A171W |       |              | A171WE (silver, black face), A171WEG (gold), A171WEGG (black), A171WEMG (gold) |
+| A171W | ✅     |              | A171WE (silver, black face), A171WEG (gold), A171WEGG (black), A171WEMG (gold) |
 | W-31  | ✅     |              | W-31 (vintage, stainless steel case & strap) |
 | W-78  | ✅     |              | W-78 (vintage, larger and rounder with [a bit of a 90s look](http://whichwatchtoday.blogspot.com/2014/02/casio-w-78-alarm-chronograph.html)) |
 
