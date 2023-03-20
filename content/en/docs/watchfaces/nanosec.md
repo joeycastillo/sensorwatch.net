@@ -19,7 +19,9 @@ For accurate timekeeping, you need to correct for your crystal's static frequenc
 
 ### Calibrating the Sensor Watch
 
-You need a watch with a temperature sensor, and the firmware has to include these faces:
+For really good results you need a watch with a temperature sensor, but you can also get a significant improvement without one. Without a temperature sensor, select correction profile P1 instead of the default P3 (details in the last section).
+
+The firmware has to include these faces:
 
 - A regular clock face like Simple Clock (`simple_clock_face`), because you want a way to see the time;
 - Time Set (`set_time_face`), because you need a way to set the date and time;
@@ -134,6 +136,20 @@ In each of the screens below, you can use LIGHT to increase the value and ALARM 
 - T0: The crystal's center temperature, in °C. Nominally this is 25 °C for all crystals, but small variations are possible. A true center temperature improves the precision of dynamic frequency adjustments. However, in order to determine this value, a number of fine measurements are needed at controlled temperatures, which is beyond the reach of most Sensor Watch users.
 - 2C: The quadratic coefficient in the formula that Nanosec uses to approximate the quartz crystal's temperature characteristics.
 - 3C: The cubic coefficient in the formula that Nanosec uses to approximate the quartz crystal's temperature characteristics.
-- PR: The correction profile (formula) used to model the crystal's temperature characteristics. You will most likely want to stick with P3.
+- PR: The correction profile (formula) used to model the crystal's temperature characteristics. You will most likely want to stick with P3, but see description of profiles below.
 - CD: The cadence of time correction, i.e., the length of the interval (in minutes) at which Nanosec makes a minuscule adjustment to the time.
 - AA: Aging compensation (ppm/year). The static frequency of crystals changes with age, but the exact value can only be determined empirically. If you notice that you keep adding 0.5 ppm each year to the static frequency correction to stay accurate, you can instead enter that value here.
+
+### Nanosec correction profiles
+
+This is what the various correction profiles do.
+
+**P0**: Static hardware correction with 1ppm resolution. This has the least additional power draw because the correction is done entirely in the hardware.
+
+**P1**: High-resolution (0.01ppm) static correction implemented in software. This is the profile you'd want to choose if your watch has no temperature sensor.
+
+**P2**: High-resolution static correction, plus dynamic frequency correction for temperature changes. The dynamic correction uses the quadratic formula from the crystal's datasheet.
+
+**P3**: Like P2, both static and dynamic correction, but using an empirically measured cubic formula.
+
+**P4**: Custom settings for a specific crystal, using values that you can edit in the source code. You need to determine these values yourself; your crystal is unlikely to match what you find in the source code.
