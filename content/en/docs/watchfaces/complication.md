@@ -10,6 +10,7 @@ In horology, a complication is an additional set of gears in a mechanical watch 
  * [Stopwatch](#stopwatch)
  * [Stock Stopwatch](#stock-stopwatch)
  * [Countdown](#countdown)
+ * [Timer](#timer)
  * [Counter](#counter)
  * [Interval](#interval)
  * [Alarm](#alarm)
@@ -17,6 +18,7 @@ In horology, a complication is an additional set of gears in a mechanical watch 
  * [Tomato Productivity Timer](#tomato-productivity-timer)
  * [TOTP Generator](#totp-generator)
  * [Day One](#day-one)
+ * [Time Left](#time-left)
  * [Blinky Light](#blinky-light)
  * [Astronomy](#astronomy)
  * [Orrery](#orrery)
@@ -57,20 +59,37 @@ The Stopwatch face provides basic stopwatch functionality: you can start and sto
 Stock Stopwatch
 ---------------
 
-The Stock Stopwatch face implements the original F-91W stopwatch functionality including counting hundredths of seconds and lap timing. 
+The Stock Stopwatch face implements the original F-91W stopwatch functionality, including counting hundredths of seconds and lap timing. 
 * Use the alarm button to start and stop the stopwatch.
-* Pressing the light button on a running timer shows the lap time. (The stopwatch continues running in the background, indicated by a blinking colon.)
-* Pressing the light button when the lap time is shown switches back to the running stopwatch.
-* Pressing the light button when the timekeeping is stopped resets the stopwatch.
+* Press the light button while the stopwatch is running to view the lap time. The stopwatch continues running in the background, indicated by a blinking colon.
+* Press the light button again to switch back to the running stopwatch.
+* Press the light button when the timekeeping is stopped to reset the stopwatch.
 
 There are two improvements compared to the original F-91W: 
-1. When reaching 59:59 the counter does not simply jump back to zero, but keeps track of hours in the upper right hand corner. (Up to 24h)
-2. Long pressing the light button toggles the led behaviour: it either turns on on each button press or it doesn't.
+1. When the stopwatch reaches 59:59, the counter does not simply jump back to zero but keeps track of hours in the upper right-hand corner (up to 24 hours).
+2. Long-press the light button to toggle the LED behavior. It either turns on with each button press or remains off.
 
 Countdown
 ---------
 
 TODO
+
+Timer
+-----
+
+The timer watch face is an advanced countdown face, providing the functionality of starting a countdown by choosing one out of nine programmable timer presets. A timer/countdown can be 23 hours, 59 minutes, and 59 seconds max. A timer can also be set to auto-repeat, which is indicated by the lap indicator.
+
+How to use in NORMAL mode:
+  - Short-pressing the alarm button cycles through all preset timer lengths. Find the current timer slot number in the upper right-hand corner.
+  - Long-pressing the alarm button starts the timer.
+  - Long-pressing the light button initiates settings mode.
+
+How to use in SETTINGS mode:
+  - There are up to nine slots for storing a timer setting. The current slot is indicated by the number in the upper right-hand corner.
+  - Short-pressing the light button cycles through the settings values of each timer slot in the following order:  
+  *hours* -> *minutes* -> *seconds* -> *timer repeat*
+  - Short-pressing the alarm button alters the current settings value.
+  - Long-pressing the light button returns to normal mode.
 
 Counter
 -------
@@ -80,9 +99,9 @@ TODO
 Interval
 --------
 
-The Interal face provides 9 customizable interval timers, which can be used for hit training device and/or for time management techniques.
+The Interval face provides 9 customizable interval timers, which can be used for hit training and/or time management techniques.
 
-- To cycle through the 9 interval timers, press the alarm button (short press). For each timer slot the relevant details for esch timer phase are shown in a "carousel" (see below).
+- To cycle through the 9 interval timers, press the alarm button (short press). For each timer slot, the relevant details for each timer phase are shown in a "carousel" (see below).
 
 - To start an interval timer, press and hold the alarm button.
 
@@ -96,15 +115,15 @@ The Interal face provides 9 customizable interval timers, which can be used for 
 `(1) prepare/warm up --> (2) work --> (3) break --> (4) cool down`\
 When setting up or running a timer, each of these phases is indicated by the letters "PR" (prepare), "WO" (work), "BR" (break), or "CD" (cool down).
 
-- Each of these phases is optional, you can set the corresponding minutes and seconds to zero. If you want to use the timer, at least one phase needs to be set to a non-zero value.
+- Each of these phases is optional, and you can set the corresponding minutes and seconds to zero. If you want to use the timer, at least one phase needs to be set to a non-zero value.
 
 - You can define the number of rounds either only for the work phase and/or for the combination of work + break phase. Let's say you want an interval timer that counts 3 rounds of 30 seconds work, followed by 20 seconds rest, like so:\
-    work 30s --> work 30s --> work 30s --> break 20s\
-You can do this by setting 30s for the "WO"rk phase and setting a 3 in the lower right hand corner of the work page. The "LAP" indicator lights up at this position, to explain that we are setting laps here. After that, set the "BR"eak phase to 20s and leave the rest as it is.
+    *work 30s* --> *work 30s* --> *work 30s* --> *break 20s*\
+You can do this by setting 30s for the "WO"rk phase and setting a 3 in the lower right-hand corner of the work page. The "LAP" indicator lights up at this position, to explain that we are setting laps here. After that, set the "BR"eak phase to 20s and leave the rest as it is.
 
-- If you want to set up a certain number of "full rounds", consisting of work phase(s) plus breaks, you can do so at the "BR"eak page. The number in the lower right hand corner determines the number of full rounds to be counted. A "-" means that there is no limit and the timer keeps alternating between work and break phases.
+- If you want to set up a certain number of "full rounds", consisting of work phase(s) plus breaks, you can do so at the "BR"eak page. The number in the lower right-hand corner determines the number of full rounds to be counted. A "-" means that there is no limit, and the timer keeps alternating between work and break phases.
 
-- This watch face comes with several pre-defined interval timers, suitable for hiit training (timer slots 1 to 4) as well as doing work according to the pomodoro principle (timer slots 5 to 6). Feel free to adjust the timer slots to your own needs (or completely wipe them).
+- This watch face comes with several pre-defined interval timers suitable for HIIT training (timer slots 1 to 4) as well as doing work according to the Pomodoro technique (timer slots 5 to 6). Feel free to adjust the timer slots to your own needs (or completely wipe them).
 
 Alarm
 -----
@@ -206,6 +225,31 @@ Long press on the Alarm button to enter customization mode. The text "YR" will a
 
 Note that at this time, the Day One face does not display the sleep indicator in sleep mode, which may make the watch appear to be unresponsive in sleep mode. You can still press the Alarm button to wake the watch. This UI quirk will be addressed in a future update.
 
+Time Left
+---------
+
+The Time Left Face helps you visualize how far you have progressed in a certain time span. Similar to the Day One Face, you can set your starting date. Additionally, you can also set your target or destination date. You can then use the face to display your progress in various ways.
+
+**Usage:**
+
+- Long-pressing of the light button starts the **settings mode**:
+  - First, you set the beginning date (indicated by a 'b' in the upper right corner).
+  - Begin by setting the year (indicated by the letter 'YR'). Use the alarm button to cycle through the values. Short-pressing the light button brings you to the next settings page.
+  - Set the values in this order:
+      1. beginning date (indicated by a 'b'): year - month - day
+      2. destination date (indicated by a 'd'): year - month - day
+  - After cycling through all settings pages, the face returns to display mode.
+
+- In **display mode**, use the alarm button (short press) to cycle through these four types of display:
+    1. number of days left ('DL') until the destination date is reached.
+    2. remaining days expressed as a percentage of the total time span. The value is shown with two decimals, using the colon as a decimal point.
+    3. number of days passed ('DA') since the beginning date. (This is the same value the Day One Face would give you.)
+    4. number of days passed expressed as a percentage of the total time span.
+
+**What is this for?**
+
+You can use this watch face to be reminded of any kind of progress between a set start and end date. The brave among us can use it as a kind of memento mori visualization. Set your date of birth and look up the average life expectancy of  your age cohort based on publicly available mortality tables. Then, set the  statistically expected day of death as the target date, and you will be able to  see how much of your time has passed and how much is still to come.
+
 Blinky Light
 ------------
 
@@ -276,19 +320,22 @@ The Invaders watch face is an authentic remake of the "famous" number invaders g
 
 How to play:
 
-- Press the alarm button to start the game. "Invaders" (just digits, tbh) will start coming in from the right hand side.
+- Press the alarm button to start the game. "Invaders" (just digits, tbh) will start coming in from the right-hand side.
 - Press the light button to "aim". The digit on the top of the display cycles from 0 to 9. 
 - If your aiming digit is identical to one of the invaders, press the alarm button to "shoot". The corresponding invader will disappear.
 - If the invaders reach beneath the very first position, you loose one defense line. When all three defense lines are gone, the game is over.
-- Also: If you shoot more than 29 times per wave, you loose the game.
+- Also: If you shoot more than 29 times per wave, you lose the game.
 - There are 16 invaders per wave. There is a short break between waves.
-- Long pressing the light button toggles sound on or off. (Not while playing.)
+- Long pressing the light button toggles sound on or off (not while playing).
 
 The "n" invaders are ufos!
 
 Whenever the sum of all invaders shot is divisible by 10 the next invader will be an ufo, represented by the n-symbol. Shooting a ufo gets you extra points. Example: shoot 2, 5, 3 --> ufo next
 
 As for points: the earlier you shoot an invader, the more points you get.
+
+To anyone interested in the original game manual, see here: [https://www.digitalwatchlibrary.com/images/casio_manuals/0134.pdf](https://www.digitalwatchlibrary.com/images/casio_manuals/0134.pdf)
+
 
 RPN Calculator
 --------------
