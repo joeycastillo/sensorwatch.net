@@ -31,7 +31,7 @@ This is the standard firmware for Movement. It's packed, but not jam-packed:
 * Moon Phase - Tonight's moon phase. (press Alarm to see days in the future)
 * Stopwatch (by Wesley Ellis) - A simple stopwatch with one-second resolution.
 
-Download it now: for [Green Boards](/docs/firmware/download/standard-green.uf2) and [Blue Boards](/docs/firmware/download/standard-blue.uf2)
+Download it now: for [Red Boards](/docs/firmware/download/standard-red.uf2), [Green Boards](/docs/firmware/download/standard-green.uf2) and [Blue Boards](/docs/firmware/download/standard-blue.uf2)
 
 Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/standard/)
 
@@ -50,7 +50,7 @@ Post-campaign, the temperature sensor board was optional, so we replaced the tem
 * Moon Phase - Tonight's moon phase. (press Alarm to see days in the future)
 * Temperature - As measured from the temperature sensor board. (Alarm toggles C or F)
 
-Download it now: for [Green Boards](/docs/firmware/download/backer-green.uf2) and [Blue Boards](/docs/firmware/download/backer-blue.uf2)
+Download it now: for [Red Boards](/docs/firmware/download/backer-red.uf2), [Green Boards](/docs/firmware/download/backer-green.uf2) and [Blue Boards](/docs/firmware/download/backer-blue.uf2)
 
 Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/backer/)
 
@@ -66,7 +66,7 @@ For folks who want to use the watch for productivity.
 * Stopwatch (by Wesley Ellis) - A simple stopwatch with one-second resolution.
 * Countdown (by Wesley Ellis) - A simple countdown timer for eggs, tea or tasks.
 
-Download it now: for [Green Boards](/docs/firmware/download/focus-green.uf2) and [Blue Boards](/docs/firmware/download/focus-blue.uf2)
+Download it now: for [Red Boards](/docs/firmware/download/focus-red.uf2), [Green Boards](/docs/firmware/download/focus-green.uf2) and [Blue Boards](/docs/firmware/download/focus-blue.uf2)
 
 Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/focus/)
 
@@ -83,7 +83,7 @@ For folks who want to use the watch for fitness.
 * Exercise Counter (by Shogo Okamoto) - Designed for tracking a number of exercises by pressing the Alarm button.
 * Pulsometer - Hold the Alarm button while touching a vein on your neck, and count 30 beats. Release for your heart rate.
 
-Download it now: for [Green Boards](/docs/firmware/download/the_athlete-green.uf2) and [Blue Boards](/docs/firmware/download/the_athlete-blue.uf2)
+Download it now: for [Red Boards](/docs/firmware/download/the_athlete-red.uf2), [Green Boards](/docs/firmware/download/the_athlete-green.uf2) and [Blue Boards](/docs/firmware/download/the_athlete-blue.uf2)
 
 Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/the_athlete/)
 
@@ -101,7 +101,7 @@ This watch face is focused on helping you when out in the backcountry.
 * Temperature Log - A 36-hour log. Toss the watch outside your tent to measure overnight lows.
 * Blinky Light - This will chew through your battery, but could be useful in an emergency.
 
-Download it now: for [Green Boards](/docs/firmware/download/the_backpacker-green.uf2) and [Blue Boards](/docs/firmware/download/the_backpacker-blue.uf2)
+Download it now: for [Red Boards](/docs/firmware/download/the_backpacker-red.uf2), [Green Boards](/docs/firmware/download/the_backpacker-green.uf2) and [Blue Boards](/docs/firmware/download/the_backpacker-blue.uf2)
 
 Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/the_backpacker/)
 
@@ -115,7 +115,7 @@ For folks who think space is the place!
 * Sunrise/Sunset - Local sunrise and sunset times.
 * Moon Phase - Today's moon phase. (press Alarm to see days in the future)
 
-Download it now: for [Green Boards](/docs/firmware/download/the_stargazer-green.uf2) and [Blue Boards](/docs/firmware/download/the_stargazer-blue.uf2)
+Download it now: for [Red Boards](/docs/firmware/download/the_stargazer-red.uf2), [Green Boards](/docs/firmware/download/the_stargazer-green.uf2) and [Blue Boards](/docs/firmware/download/the_stargazer-blue.uf2)
 
 Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/the_stargazer/)
 
@@ -131,7 +131,7 @@ For folks who work in deep space. (no, really!)
 * World Clock - One slot for the ground station in Canberra (Australia)
 * Day One - Counts the number of days from a given date. Try plugging in the start of a mission (i.e. August 20, 1977) to get mission day.
 
-Download it now: for [Green Boards](/docs/firmware/download/deep_space_now-green.uf2) and [Blue Boards](/docs/firmware/download/deep_space_now-blue.uf2)
+Download it now: for [Red Boards](/docs/firmware/download/deep_space_now-red.uf2), [Green Boards](/docs/firmware/download/deep_space_now-green.uf2) and [Blue Boards](/docs/firmware/download/deep_space_now-blue.uf2)
 
 Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/deep_space_now/)
 
@@ -146,6 +146,6 @@ For fans of alternative timekeeping systems.
 
 I hope to expand this face in the future. (International Fixed Calendar, anyone?)
 
-Download it now: for [Green Boards](/docs/firmware/download/alt_time-green.uf2) and [Blue Boards](/docs/firmware/download/alt_time-blue.uf2)
+Download it now: for [Red Boards](/docs/firmware/download/alt_time-red.uf2), [Green Boards](/docs/firmware/download/alt_time-green.uf2) and [Blue Boards](/docs/firmware/download/alt_time-blue.uf2)
 
 Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/alt_time/)
