@@ -7,7 +7,13 @@ This section contains the stock firmware for Sensor Watch, as well as several pr
 
 ### Prebuilt Firmwares
 
-Note that each firmware comes in two flavors, depending on the color of your circuit board. This is because blue boards have a red/blue LED and green boards have a red/green LED, and the pins are swapped. No damage will result from loading the wrong firmware onto your board, but the LED colors will be wrong. 
+Note that each firmware comes in three flavors, depending on the color of your circuit board: 
+
+* There are a few Special Edition boards with a red/blue LED that are blue in color. For these boards, you should download the blue firmware.
+* The classic Sensor Watch circuit board was green. If you have this board, you should download the green firmware.
+* The new Sensor Watch Lite circuit board is red. For these boards, download the red firmware.
+
+If you put the wrong color of firmware on a board — specifically, if you put the blue/green firmware onto a red board or vice versa — the LED will light up bright yellow to indicate that there was a mismatch. Make sure to match the color of firmware to the color of your board!
 
 Also note that all of these have the "Preferences" and "Time Set" screens at the end; for brevity they aren't included in this listing, but you will always have access to them.
 
