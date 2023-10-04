@@ -14,6 +14,7 @@ The watch faces in this section relate to watch configuration.
 
 Finetune
 --------
+[`finetune_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/settings/finetune_face.h)
 
 FineTune face allows to align watch with sub-second precision in 25/250ms
 accuracy. Counts time since previous finetune, and allows to calculate &
@@ -25,6 +26,7 @@ For more information, refer to [Calibration with Nanosec](../nanosec/).
 
 Nanosec
 -------
+[`nanosec_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/settings/nanosec_face.h)
 
 The goal of nanosec face is dramatic improvement of SensorWatch accuracy.
 Minimum goal is <60 seconds of error per year. Full success is if we can
@@ -36,6 +38,7 @@ For more information, refer to [Calibration with Nanosec](../nanosec/).
 
 Place
 -----
+[`place_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/settings/place_face.h)
 
 Based on and expanded from the Sunrise/Sunset face. Outsourced the location setting functionality to 
 its own face. Also serves as a converter between different coordinate notation formats.
@@ -113,6 +116,7 @@ rounding errors when editing or loading the coordinates in other notation format
 
 Preferences
 -----------
+[`preferences_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/settings/preferences_face.h)
 
 The Preferences watch face allows you to configure various options on your Sensor Watch. Like all other screens, you advance the field you’re setting with the Light button, and advance its value with the Alarm button. The Preferences watch face labels each setting with a two-letter code on the top row; the following list describes each setting and their options:
 
@@ -133,6 +137,7 @@ On the last two screens, the LED remains on so that you can see the effect of mi
 
 Time Set
 --------
+[`set_time_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/settings/set_time_face.h)
 
 The Time Set watch face allows you to set the time on Sensor Watch. Use the Light button to advance through the field you are setting, and the Alarm button to change the value in that field. The fields are, in order: Hour, Minute, Second, Year, Month, Day and Time Zone.
 
@@ -140,6 +145,7 @@ For features like World Clock and Sunrise/Sunset to work correctly, you must set
 
 Time Set Hackwatch
 ------------------
+[`set_time_hackwatch_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/settings/set_time_hackwatch_face.h)
 
 This is an extended version of set_time face which allow setting seconds
 precisely. To achieve that - press and hold alarm button few seconds before

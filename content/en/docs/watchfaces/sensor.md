@@ -5,21 +5,27 @@ weight: 8
 ---
 Sensor Watch is designed to display data from sensors. The watch faces in this category read sensor data and present it in a useful way.
 
-* [Voltage](#voltage)
+* [Accelerometer Data Acquisition](#accelerometer-data-acquisition)
+* [Light Meter](#light-meter)
 * [Temperature Display](#temperature-display)
 * [Temperature Log](#temperature-log)
 * [Temperature Testing](#temperature-testing)
-* [LIS2DW Accelerometer Data Logger](#lis2dw-accelerometer-data-logger)
 
-Voltage
--------
+Accelerometer Data Acquisition
+------------------------------
+[`accelerometer_data_acquisition_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/sensor/accelerometer_data_acquisition_face.h)
 
-This watch face is very simple and has no controls to speak of. It displays the battery voltage as measured by the SAM L22's ADC.
+TODO
 
-Note that the Simple Clock watch face includes a low battery warning, so you don't technically need to this watch face unless you want to track the battery level.
+Light Meter
+-----------
+[`lightmeter_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/sensor/lightmeter_face.h)
+
+TODO
 
 Temperature Display
 -------------------
+[`thermistor_logging_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/sensor/thermistor_logging_face.h)
 
 This watch face is designed to work with either the Temperature + GPIO sensor board or the Temperature + Light sensor board. It reads the current temperature from the thermistor voltage divider on the sensor board, and displays the current temperature in degrees Celsius.
 
@@ -31,6 +37,7 @@ Pressing the Alarm button toggles the unit display from Celsius to Fahrenheit. T
 
 Temperature Log
 ---------------
+[`thermistor_readout_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/sensor/thermistor_readout_face.h)
 
 This watch face automatically logs the temperature once an hour, and maintains a 36-hour log of readings. This watch face is admittedly rather complex, and bears some explanation.
 
@@ -44,10 +51,6 @@ If you need to illuminate the LED to read the data point, long press the Light b
 
 Temperature Testing
 -------------------
+[`thermistor_testing_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/sensor/thermistor_testing_face.h)
 
 This watch face is similar to the Temperature watch face, but it updates the temperature several times per second. You likely don't need this watch face, but it is useful for testing the temperature sensor boards.
-
-LIS2DW Accelerometer Data Logger
---------------------------------
-
-This is an experimental watch face for logging data on the “Sensor Watch Motion Express” board. I will add more documentation for this watch face once this sensor board is more widely available.
