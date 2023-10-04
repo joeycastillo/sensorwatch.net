@@ -61,22 +61,22 @@ using the watch's piezo buzzer as a modem, then clear the log in the watch.
 To record and decode a chirpy transmission on your computer, you can
 [use the web app here](https://jealousmarkup.xyz/off/chirpy/rx/).
 
-### Using the face
+#### Using the face
 
 When you activate the face, it starts with the first screen to select the activity you want to log.
-ALARM cycles through the list of activities.
-LONG ALARM starts logging.
-While logging is in progress, the face alternates between the elapsed time and the current time.
-You can press ALARM to pause (e.g., while you hop in to the baker's for a croissant during your jog).
-Pressing ALARM again resumes the activity.
-LONG ALARM stops logging and saves the activity.
+* ALARM cycles through the list of activities.
+* LONG ALARM starts logging.
+* While logging is in progress, the face alternates between the elapsed time and the current time.
+* You can press ALARM to pause (e.g., while you hop in to the baker's for a croissant during your jog).
+* Pressing ALARM again resumes the activity.
+* LONG ALARM stops logging and saves the activity.
 
 When you're not loggin, you can press LIGHT to access the secondary faces.
-LIGHT #1 => Shows the size of the log (how many activities have been recorded).
-LIGHT #2 => The screen to chirp out the data. Press LONG ALARM to start chirping.
-LIGHT #3 => The screen to clear the log in the watch. Press LONG ALARM twice to clear data.
+* LIGHT #1 => Shows the size of the log (how many activities have been recorded).
+* LIGHT #2 => The screen to chirp out the data. Press LONG ALARM to start chirping.
+* LIGHT #3 => The screen to clear the log in the watch. Press LONG ALARM twice to clear data.
 
-### Quirky details
+#### Quirky details
 
 The face will discard short activities (less than a minute) when you press LONG ALARM to finish logging.
 These were probably logged by mistake, and it's better to save slots and chirping battery power for
@@ -196,9 +196,9 @@ Counter
 Counter face is designed to count the number of running laps during exercises.
 
 Usage:
-Short-press ALARM to increment the counter (loops at 99)
-Long-press ALARM to reset the counter.
-Long-press LIGHT to toggle sound.
+* Short-press ALARM to increment the counter (loops at 99)
+* Long-press ALARM to reset the counter.
+* Long-press LIGHT to toggle sound.
 
 Databank
 --------
@@ -212,10 +212,10 @@ to the define the data that will be displayed. Each "item" contains
 a two-letter label (using the day-of-week display), then a longer
 string that will be displayed one "word" (six characters) at a time.
 
-Short-press ALARM to display the next word.
-Short-press LIGHT to display the previous word.
-Long-press ALARM to display the next item.
-Long-press LIGHT to display the previous item.
+* Short-press ALARM to display the next word.
+* Short-press LIGHT to display the previous word.
+* Long-press ALARM to display the next item.
+* Long-press LIGHT to display the previous item.
 
 Day One
 -------
@@ -231,37 +231,34 @@ Disc Golf
 ---------
 [`discgolf_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/discgolf_face.h)
 
- * Keep track of scores in discgolf or golf!
- * The watch face operates in three different modes:
- *
- *  - dg_setting: Select a course
- *      Enter this mode by holding down the light button. The screen will display
- *      the label for the hole and the lowest score since last boot.
- *      Press alarm to loop through the holes. Press the light button to make a
- *      selection. This will reset all scores and start a new game in dg_idle mode.
- *
- *  -dg_idle: We're playing a hole
- *      This either shows your current score relative to par, or the score for a
- *      particular hole.
- *      At the start of a game, press alarm to loop through the holes and leave it
- *      your starting hole. For optimal experience, play the course linearly after that
- *      If you're viewing the hole you're supposed to be playing, the watch face will
- *      display your score relative to par.
- *      Use the alarm button to view other holes than the one you're playing, in which
- *      case the input score for that hole will be displayed, in case it needs changing.
- *      Long press the alarm button to snap back to currently playing hole.
- *      To input scores for a hole in this mode, press the light button.
- *
- *  -dg_scoring: Input score for a hole
- *      In this mode, if the score is 0 (hasn't been entered during this round),
- *      it will blink, indicating we're in scoring mode. Press the alarm button
- *      to increment the score up until 15, in which case it loops back to 0.
- *      Press the light button to save the score for that hole, advance one hole
- *      if you're not editing an already input score, and returning to idle mode.
- *
- *  When all scores have been entered, the LAP indicator turns on. At that point, if we enter
- *  dg_setting to select a course, the score for that round is evaluated against the current
- *  lowest score for that course, and saved if it is better.
+Keep track of scores in discgolf or golf!
+The watch face operates in three different modes:
+* dg_setting: Select a course
+    * Enter this mode by holding down the light button. The screen will display
+      the label for the hole and the lowest score since last boot.
+    * Press alarm to loop through the holes. Press the light button to make a
+      selection. This will reset all scores and start a new game in dg_idle mode.
+* dg_idle: We're playing a hole
+    * This either shows your current score relative to par, or the score for a
+      particular hole.
+    * At the start of a game, press alarm to loop through the holes and leave it
+      your starting hole. For optimal experience, play the course linearly after that
+    * If you're viewing the hole you're supposed to be playing, the watch face will
+      display your score relative to par.
+    * Use the alarm button to view other holes than the one you're playing, in which
+      case the input score for that hole will be displayed, in case it needs changing.
+    * Long press the alarm button to snap back to currently playing hole.
+    * To input scores for a hole in this mode, press the light button.
+* dg_scoring: Input score for a hole
+    * In this mode, if the score is 0 (hasn't been entered during this round),
+      it will blink, indicating we're in scoring mode. Press the alarm button
+      to increment the score up until 15, in which case it loops back to 0.
+    * Press the light button to save the score for that hole, advance one hole
+    * if you're not editing an already input score, and returning to idle mode.
+
+When all scores have been entered, the LAP indicator turns on. At that point, if we enter
+dg_setting to select a course, the score for that round is evaluated against the current
+lowest score for that course, and saved if it is better.
 
 Dual Timer
 ----------
@@ -272,8 +269,8 @@ that feature two chronographs for timing two simultaneous events, here is a watc
 face that expands upon Andreas Nebinger's Stock Stopwatch Face code to implement this 
 functionality.
 
-ALARM starts/stops timer A, resets on the next start
-LIGHT starts/stops timer B, resets on the next start
+* ALARM starts/stops timer A, resets on the next start
+* LIGHT starts/stops timer B, resets on the next start
 
 When a timer is running, tapping MODE toggles between displaying timers A or B, as
 indicated at the top of the display.
@@ -332,22 +329,22 @@ LONG PRESSING ALARM toggles the display of the King Wen sequence index for the c
 Hexagram (https://en.wikipedia.org/wiki/King_Wen_sequence )or the abbreviated name for the
 cast Geomantic Figure:
 
-GF - Greater Fortune (Fortuna Major)
-LF - Lesser Fortune (Fortuna Minor)
-PO - Populus
-VI - Via
-AL - Albus
-CO - Conjunctio
-PA - Puella
-AM - Amissio
-PR - Puer
-RU - Rubeus
-AQ - Acquisitio
-LA - Laetitia
-TR - Tristitia
-CA - Carcer
-HD - Head of the Dragon (Caput Draconis)
-TD - Tail of the Dragon (Cauda Draconis)
+* GF - Greater Fortune (Fortuna Major)
+* LF - Lesser Fortune (Fortuna Minor)
+* PO - Populus
+* VI - Via
+* AL - Albus
+* CO - Conjunctio
+* PA - Puella
+* AM - Amissio
+* PR - Puer
+* RU - Rubeus
+* AQ - Acquisitio
+* LA - Laetitia
+* TR - Tristitia
+* CA - Carcer
+* HD - Head of the Dragon (Caput Draconis)
+* TD - Tail of the Dragon (Cauda Draconis)
 
 Habit
 -----
@@ -364,27 +361,19 @@ Interval
 The Interval face provides 9 customizable interval timers, which can be used for hit training and/or time management techniques.
 
 - To cycle through the 9 interval timers, press the alarm button (short press). For each timer slot, the relevant details for each timer phase are shown in a "carousel" (see below).
-
 - To start an interval timer, press and hold the alarm button.
-
 - To pause a running timer, press the alarm button (short press).
-
 - To completely abort a running timer, press and hold the alarm button.
-
 - Press and hold the light button to enter settings mode for the current interval timer. Short pressing the light button cycles through the settings of each timer.
-
 - Each interval timer has 1 to 4 phases of customizable length like so:\
-`(1) prepare/warm up --> (2) work --> (3) break --> (4) cool down`\
+`(1) prepare/warm up --> (2) work --> (3) break --> (4) cool down`
+
 When setting up or running a timer, each of these phases is indicated by the letters "PR" (prepare), "WO" (work), "BR" (break), or "CD" (cool down).
-
 - Each of these phases is optional, and you can set the corresponding minutes and seconds to zero. If you want to use the timer, at least one phase needs to be set to a non-zero value.
-
 - You can define the number of rounds either only for the work phase and/or for the combination of work + break phase. Let's say you want an interval timer that counts 3 rounds of 30 seconds work, followed by 20 seconds rest, like so:\
     *work 30s* --> *work 30s* --> *work 30s* --> *break 20s*\
 You can do this by setting 30s for the "WO"rk phase and setting a 3 in the lower right-hand corner of the work page. The "LAP" indicator lights up at this position, to explain that we are setting laps here. After that, set the "BR"eak phase to 20s and leave the rest as it is.
-
 - If you want to set up a certain number of "full rounds", consisting of work phase(s) plus breaks, you can do so at the "BR"eak page. The number in the lower right-hand corner determines the number of full rounds to be counted. A "-" means that there is no limit, and the timer keeps alternating between work and break phases.
-
 - This watch face comes with several pre-defined interval timers suitable for HIIT training (timer slots 1 to 4) as well as doing work according to the Pomodoro technique (timer slots 5 to 6). Feel free to adjust the timer slots to your own needs (or completely wipe them).
 
 Invaders
@@ -440,7 +429,7 @@ These two parts of the codebase are totally independent:
 The user interface (`morsecalc_face.h`, `morsecalc_face.c`) lets you talk
 to the RPN calculator through Morse code.
 
-### Controls
+#### Controls
  - `light` is dash
  - `alarm` is dot
  - `mode` is "finish character"
@@ -448,7 +437,7 @@ to the RPN calculator through Morse code.
  - long-press `alarm` to show stack
  - long-press `light` to toggle the light
 
-### Morse code token entry
+#### Morse code token entry
 As you enter `.`s and `-`s, the morse code char you've entered will
 appear in the top center digit. At the top right is the # of morse code
 `.`/`-` you've input so far. The character resets at the 6th `.`/`-`.
@@ -465,12 +454,12 @@ Special characters:
  - Clear token input without submitting to calculator is `Start
    transmission` (`-.-.-`).
 
-### Writing commands
+#### Writing commands
 First the calculator will try to interpret the token as a command/stack operation.
 Commands are defined in `calc_dict[]` in `movement/lib/morsecalc/calc_fns.h`.
 If the command doesn't appear in the dictionary, the calculator tries to interpret the token as a number.
 
-### Writing numbers
+#### Writing numbers
 Numbers are written like floating point strings.
 Entering a number pushes it to the top of the stack if there's room.
 This can get long, so for convenience numerals can also be written in binary with .- = 01.
@@ -487,7 +476,7 @@ For example: "4.2e-3" can be entered directly, or as "4h2pC3"
   similarly, "0.0042" can also be entered as "eheedn"
 Once you submit a number to the watch face, it pushes it to the top of the stack if there's room.
 
-### Number display
+#### Number display
 After a command runs, the top of the stack is displayed in this format:
 
   - Main 4 digits = leading 4 digits
@@ -503,7 +492,7 @@ So for example, the watch face might look like this:
 
 ... representing `+4.200e-3` is in stack location 0 (the top) and it's one of five items in the stack.
 
-### Looking at the stack
+#### Looking at the stack
 To show the top of the stack, push and hold `light`/`alarm` or submit a blank token by pushing `mode` a bunch of times.
 To show the N-th stack item (0 through 9):
 
@@ -542,7 +531,7 @@ Planetary Hours
 ---------------
 [`planetary_hours_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/planetary_hours_face.h)
 
-### Background
+#### Background
 
 Both the 24 hour day and the order of our weekdays have quite esoteric roots.
 The ancient Egyptians divided the day up into 12 hours of sunlight and 12 hours
@@ -554,7 +543,7 @@ Because 24 hours cannot be equally divided by seven, the planetary rulers carrie
 over to the first hour of the next day, effectively ruling over the entire day 
 and lending the whole day their name. The seven day week was born.
 
-### PLANETARY HOUR CHART COMPLICATION
+#### PLANETARY HOUR CHART COMPLICATION
 
 This complication watch face displays the start time of the current planetary hour 
 according to the given location and day of the year. The number of the current
@@ -571,13 +560,13 @@ launched after sunset.
 The planetary ruler of the current hour and day is displayed at the top in 
 Latin or Greek shorthand notation:
 
-Saturn (SA) / Chronos (CH) / ♄
-Jupiter (JU) / Zeus (ZE) / ♃
-Mars (MA) / Ares (AR) / ♂
-Sol (SO) / Helios (HE) / ☉
-Venus (VE) / Aphrodite (AF) / ♀
-Mercury (ME) / Hermes (HR) / ☿
-Luna (LU) / Selene (SE) / ☾
+* Saturn (SA) / Chronos (CH) / ♄
+* Jupiter (JU) / Zeus (ZE) / ♃
+* Mars (MA) / Ares (AR) / ♂
+* Sol (SO) / Helios (HE) / ☉
+* Venus (VE) / Aphrodite (AF) / ♀
+* Mercury (ME) / Hermes (HR) / ☿
+* Luna (LU) / Selene (SE) / ☾
 
 A short press of the LIGHT button toggles between Latin and Greek ruler shorthand
 notation.
@@ -589,7 +578,7 @@ Planetary Time
 --------------
 [`planetary_time_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/planetary_time_face.h)
 
-### BACKGROUND
+#### BACKGROUND
 
 Both the 24 hour day and the order of our weekdays have quite esoteric roots.
 The ancient Egyptians divided the day up into 12 hours of sunlight and 12 hours
@@ -601,7 +590,7 @@ Because 24 hours cannot be equally divided by seven, the planetary rulers carrie
 over to the first hour of the next day, effectively ruling over the entire day 
 and lending the whole day their name. The seven day week was born.
 
-### PLANETARY TIME COMPLICATION
+#### PLANETARY TIME COMPLICATION
 
 The hour digits of this complication watch-face display the current planetary hour 
 according to the given location and day of the year (First hour from 12am to 1am,
@@ -620,13 +609,13 @@ sunrise.
 The planetary ruler of the current hour and day is displayed at the top in Latin or 
 Greek shorthand notation:
 
-Saturn (SA) / Chronos (CH) / ♄
-Jupiter (JU) / Zeus (ZE) / ♃
-Mars (MA) / Ares (AR) / ♂
-Sol (SO) / Helios (HE) / ☉
-Venus (VE) / Aphrodite (AF) / ♀
-Mercury (ME) / Hermes (HR) / ☿
-Luna (LU) / Selene (SE) / ☾
+* Saturn (SA) / Chronos (CH) / ♄
+* Jupiter (JU) / Zeus (ZE) / ♃
+* Mars (MA) / Ares (AR) / ♂
+* Sol (SO) / Helios (HE) / ☉
+* Venus (VE) / Aphrodite (AF) / ♀
+* Mercury (ME) / Hermes (HR) / ☿
+* Luna (LU) / Selene (SE) / ☾
 
 The ALARM button toggles between displaying the ruler of the hour and the ruler of the day
 
@@ -722,21 +711,21 @@ Using this notation also does not require any braces, so instead of `2 * (3 - 2)
 
 The parameters are put on to a stack, which currently has a size of 4. So if one enters `2 3 2 - *` the stack would contain `2 3 2 0`. The subtraction then uses the first two values from the stack and pushes the result back on the stack, which leaves `1 2 0 0`. The multiplication then uses the next two values from the stack and pushes the end result: `2 0 0 0`.
 
-### Normal mode
+#### Normal mode
 
 In normal mode the top of the stack is displayed (initially zero), which usually represents the result of the calculation.
 - `ALARM` enters number mode
 - `LIGHT` enters operator mode
 - `MODE` switches to the next watch face
 
-### Number mode
+#### Number mode
 
 Number mode pushes a new parameter on the stack. The first four digits are whole numbers, the last two (smaller) digits are decimals.
 - `LIGHT` cycles through digits
 - `ALARM` increases the selected digit
 - `MODE` pushes the parameter on the stack (and goes back to normal mode)
 
-### Operation mode
+#### Operation mode
 
 Operation mode executes operations on the stack. Parameters are taken from the stack and the result is pushed back. If there aren't enough parameters on the stack, the calculator will go into error mode.
 
@@ -753,13 +742,13 @@ Currently implemented operations:
 - sqrt (1 param)
 - pi (0 params, will just push pi onto the stack)
 
-### Error mode
+#### Error mode
 
 An error has happened (currently only caused by too few parameters on the stack).
 - `ALARM` goes back to normal mode
 - `MODE` switches to the next watch face
 
-### Example
+#### Example
 
 To calculate the following equation:
 
@@ -831,23 +820,21 @@ Sailing
 
 Implements a sailing timer.
 
-Usage:
-
-### Waiting mode:
+#### Waiting mode:
 LIGHT button enters settings
 ALARM button starts the timer (sailing mode).
 
-### Sailing mode:
+#### Sailing mode:
 ALARM button switches to next programmed start signal.
 Long press on LIGHT button resets timer and enters waiting mode.
 Countdown to zero, then switch to counting mode.
 
-### Counting mode:
+#### Counting mode:
 After the start signal (0s), the duration of the race is counted (like a stopwatch timer).
 ALARM button increases the lap counter, ALARM long press resets lap counter.
 Long press on LIGHT button resets timer and enters waiting mode.
 
-### Setting mode:
+#### Setting mode:
 ALARM button increases active (blinking) signal. Goes to 0 if upper boundary
 (11 or whatever the signal left to the active one is set to) is met.
 10 is printed vertically (letter o plus top segment).
@@ -929,15 +916,14 @@ Use case:
 
 Usage:
 * Go to tachymeter face, TC is shown in the Weekday Digits
-* A steady d in the Day Digits indicates the distance to be used.
-    * To edit the distance:
+* A steady d in the Day Digits indicates the distance to be used. To edit the distance:
     * Long-press the Alarm button, the distance edition page (d will blink)
     * Use the Light button to change the editing (blinking) digit, and press Alarm to increase its value
     * Once done, long-press the Alarm button to exit the distance edition page
 * Press the Alarm button to start the tachymeter.
     * A running animation will appear in the Day Digits
 * Press the Alarm button to stop the tachymeter
-* The average speed and total time information will alternate.
+    * The average speed and total time information will alternate.
     * The average speed will be shown alongside /h in the Day Digits; and the total time will be shown alongside t in the Day Digits.
 * Long press the Light button to return to the distance d page, and restart the tachymeter from there.
 * Long-press the light button in the steady distance page to reset the distance to 1.00
@@ -1082,7 +1068,7 @@ Playful watch face for games of chance or divination using coins or dice.
 
 LIGHT switches between Coins and Dice mode
 
-### COINS
+#### COINS
 
 ALARM tosses a coin. If it lands on heads it gets sorted to the left side of the
 display, if it lands on tails then sorted to the right side.
@@ -1096,7 +1082,7 @@ to H/T (heads/tails), Y/N (yes/no), E/Ǝ, C/Ↄ
 LONG PRESSING ALARM on the "Coins" title page resets to one coin.
 LONG PRESSING LIGHT on the "Coins" title page resets the style to Ө/O
 
-### DICE
+#### DICE
 
 ALARM rolls a six sided dice.
 
@@ -1137,7 +1123,7 @@ echo "KRUGKIDROVUWG2ZAMJZG653OEBTG66BANJ2W24DTEBXXMZLSEB2GQZJANRQXU6JAMRXWOLQ=" 
 ```
 4. Finally, you'll need to take the Hexadecimal bytes and add them to the TOTP watchface source code and recompile movement:
 
-### Edit `totp_face.c`
+#### Edit `totp_face.c`
 You may want to remove the demo keys. Assuming you want to add a key to the end of the list:
 
 ```
@@ -1180,10 +1166,10 @@ series of URLs. Each line is what's in a QR code, e.g.:
 This is also the same as what Aegis exports in plain-text format.
 This face performs minimal sanitisation of input, however.
 
-At the moment, to get the records onto the filesystem, start a serial connection and do:
-  `echo otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example > totp_uris.txt`
-  `echo otpauth://totp/ACME%20Co:john.doe@email.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30 >> totp_uris.txt`
-(note the double >> in the second one)
+At the moment, to get the records onto the filesystem, start a serial connection and run:
+* `echo otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example > totp_uris.txt`
+* `echo otpauth://totp/ACME%20Co:john.doe@email.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30 >> totp_uris.txt`
+(note the double ">>")
 
 You may want to customise the characters that appear to identify the 2FA
 code. These are just the first two characters of the issuer, and it's fine

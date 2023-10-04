@@ -52,11 +52,9 @@ Decimal Time
 ------------
 [`decimal_time_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/clock/decimal_time_face.h)
 
-This face presents the current time as hours and hundredths of an hour. Every hundreth of an hour, or "centihour", 
-occurs every 36 seconds. Because they range from 0 to 99, centihours, in the seventies range, will be displayed with a lowercase 7.
+This face presents the current time as [hours and hundredths of an hour](https://en.wikipedia.org/wiki/Decimal_time#Decimal_hours).
+Every hundreth of an hour, or "centihour", occurs every 36 seconds. Because they range from 0 to 99, centihours, in the seventies range, will be displayed with a lowercase 7.
 
-See https://en.wikipedia.org/wiki/Decimal_time#Decimal_hours
- 
 This method of timekeeping is used by the United States Postal Service.
 * http://www.branch38nalc.com/sitebuildercontent/sitebuilderfiles/CONVERSION_TABLE_TIME.pdf
 * https://postalemployeenetwork.com/time-conversion-print.htm
@@ -109,10 +107,10 @@ in the dark, and were also used by the visually impaired.
 
 How to use it :
 
-Long press the light button to get an auditive reading of the time like so :
-0..23 (1..12 if 24-hours format isn't enabled) low beep(s) for the hours
-0..3 low-high couple pitched beeps for the quarters
-0..14 high pitched beep(s) for the remaining minutes
+* Long press the light button to get an auditive reading of the time like so :
+* 0..23 (1..12 if 24-hours format isn't enabled) low beep(s) for the hours
+* 0..3 low-high couple pitched beeps for the quarters
+* 0..14 high pitched beep(s) for the remaining minutes
 
 Prerequisite : a watch with a working buzzer
 
@@ -155,7 +153,7 @@ through a list of selected time zones. It extends the original
 implementation by Joey Castillo. The face has two modes: display mode
 and settings mode.
 
-Settings mode
+#### Settings mode
 
 When the clock face is activated for the first time, it enters settings
 mode. Here, the user can select the time zones they want to display. The
@@ -181,7 +179,7 @@ following buttons:
  * A long press on the ALARM button exits settings mode and returns to
    display mode.
 
-Display mode
+#### Display mode
 
 In the display mode, the face shows the time of the currently selected
 time zone. The face includes the following components:
@@ -212,9 +210,10 @@ Wyoscan
 This is a recreation of the Wyoscan watch, which was a $175 watch in 2014.
 It was an f-91w pcb replacement.
 
-Video: https://user-images.githubusercontent.com/1795778/252550124-e07f0ed1-e328-4337-a654-fa1ee65d883f.mp4
-Background information: https://artmetropole.com/shop/11460
-Demo of what it looks like: https://www.o-r-g.com/apps/wyoscan
+https://user-images.githubusercontent.com/1795778/252550124-e07f0ed1-e328-4337-a654-fa1ee65d883f.mp4
+
+* [Background information](https://artmetropole.com/shop/11460)
+* [Demo of what it looks like](https://www.o-r-g.com/apps/wyoscan)
 
 8 frames per number * 6 numbers + the trailing 16 frames = 64 frames
 at 32 frames per second, this is a 2-second cycle time or 0.5 Hz.

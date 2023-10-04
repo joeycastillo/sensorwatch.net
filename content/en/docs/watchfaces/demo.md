@@ -9,7 +9,7 @@ weight: 8
  * [Frequency Correction](#frequency-correction)
  * [Hello There](#hello-there)
  * [LIS2DW](#demo)
- * [Demo](#demo)
+ * [Voltage](#voltage)
 
 These watch faces demonstrate functionality of the watch, and aren't generally watch faces you'd build into a working firmware.
 
