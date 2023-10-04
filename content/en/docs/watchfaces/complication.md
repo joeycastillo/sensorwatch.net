@@ -52,6 +52,46 @@ Activity
 --------
 [`activity_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/activity_face.h)
 
+The Activity face lets you record activities like you would do with a fitness watch.
+It supports different activities like running, biking, rowing etc., and for each recorded activity
+it stores when it started and how long it was.
+
+You can save up to 99 activities this way. Every once in a while you can chirp them out
+using the watch's piezo buzzer as a modem, then clear the log in the watch.
+To record and decode a chirpy transmission on your computer, you can
+[use the web app here](https://jealousmarkup.xyz/off/chirpy/rx/).
+
+### Using the face
+
+When you activate the face, it starts with the first screen to select the activity you want to log.
+ALARM cycles through the list of activities.
+LONG ALARM starts logging.
+While logging is in progress, the face alternates between the elapsed time and the current time.
+You can press ALARM to pause (e.g., while you hop in to the baker's for a croissant during your jog).
+Pressing ALARM again resumes the activity.
+LONG ALARM stops logging and saves the activity.
+
+When you're not loggin, you can press LIGHT to access the secondary faces.
+LIGHT #1 => Shows the size of the log (how many activities have been recorded).
+LIGHT #2 => The screen to chirp out the data. Press LONG ALARM to start chirping.
+LIGHT #3 => The screen to clear the log in the watch. Press LONG ALARM twice to clear data.
+
+### Quirky details
+
+The face will discard short activities (less than a minute) when you press LONG ALARM to finish logging.
+These were probably logged by mistake, and it's better to save slots and chirping battery power for
+stuff that really matters.
+
+The face will continue to record an activity past the normal one-hour mark, when the watch
+enters low energy mode. However, it will always stop at 8 hours. If an activity takes that long,
+you probably just forgot to stop logging.
+
+The log is stored in regular memory. It will be lost when you remove the battery, so make
+sure you chirp it out before taking the watch apart.
+
+See the top of activity_face.c for some customization options. What you most likely want to do
+is reduce the list of activities shown on the first screen to the ones you are regularly doing.
+
 Alarm
 -----
 [`alarm_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/alarm_face.h)
@@ -125,25 +165,57 @@ Breathing
 ---------
 [`breathing_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/breathing_face.h)
 
-TODO
+Breathing is a complication for guiding boxed breathing sessions.
+Boxed breathing is a technique to help you stay calm and improve
+concentration in stressful situations.
+
+Usage: Timed messages will cycle as long as this face is active.
+Press ALARM to toggle sound.
 
 Countdown
 ---------
 [`countdown_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/countdown_face.h)
 
-TODO
+Slight extension of the original countdown face by Wesley Ellis.
+  - Press the light button to enter setting mode and adjust the
+    countdown timer.
+  - Start and pause the countdown using the alarm button, similar
+    to the stopwatch face.
+  - When paused or terminated, press the light button to restore the
+    last entered countdown.
+
+Max countdown is 23 hours, 59 minutes and 59 seconds.
+
+Note: we have to prevent the watch from going to deep sleep using
+movement_schedule_background_task() while the timer is running.
 
 Counter
 -------
 [`counter_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/counter_face.h)
 
-TODO
+Counter face is designed to count the number of running laps during exercises.
+
+Usage:
+Short-press ALARM to increment the counter (loops at 99)
+Long-press ALARM to reset the counter.
+Long-press LIGHT to toggle sound.
 
 Databank
 --------
 [`databank_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/databank_face.h)
 
-TODO
+Displays some pre-defined data that you might want to remember
+Math constants, birthdays, phone numbers...
+
+Usage: Edit the global variable `pi_data` in "databank_face.c"
+to the define the data that will be displayed. Each "item" contains
+a two-letter label (using the day-of-week display), then a longer
+string that will be displayed one "word" (six characters) at a time.
+
+Short-press ALARM to display the next word.
+Short-press LIGHT to display the previous word.
+Long-press ALARM to display the next item.
+Long-press LIGHT to display the previous item.
 
 Day One
 -------
@@ -159,31 +231,131 @@ Disc Golf
 ---------
 [`discgolf_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/discgolf_face.h)
 
-TODO
+ * Keep track of scores in discgolf or golf!
+ * The watch face operates in three different modes:
+ *
+ *  - dg_setting: Select a course
+ *      Enter this mode by holding down the light button. The screen will display
+ *      the label for the hole and the lowest score since last boot.
+ *      Press alarm to loop through the holes. Press the light button to make a
+ *      selection. This will reset all scores and start a new game in dg_idle mode.
+ *
+ *  -dg_idle: We're playing a hole
+ *      This either shows your current score relative to par, or the score for a
+ *      particular hole.
+ *      At the start of a game, press alarm to loop through the holes and leave it
+ *      your starting hole. For optimal experience, play the course linearly after that
+ *      If you're viewing the hole you're supposed to be playing, the watch face will
+ *      display your score relative to par.
+ *      Use the alarm button to view other holes than the one you're playing, in which
+ *      case the input score for that hole will be displayed, in case it needs changing.
+ *      Long press the alarm button to snap back to currently playing hole.
+ *      To input scores for a hole in this mode, press the light button.
+ *
+ *  -dg_scoring: Input score for a hole
+ *      In this mode, if the score is 0 (hasn't been entered during this round),
+ *      it will blink, indicating we're in scoring mode. Press the alarm button
+ *      to increment the score up until 15, in which case it loops back to 0.
+ *      Press the light button to save the score for that hole, advance one hole
+ *      if you're not editing an already input score, and returning to idle mode.
+ *
+ *  When all scores have been entered, the LAP indicator turns on. At that point, if we enter
+ *  dg_setting to select a course, the score for that round is evaluated against the current
+ *  lowest score for that course, and saved if it is better.
 
 Dual Timer
 ----------
 [`dual_timer_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/dual_timer_face.h)
 
-TODO
+Inspired by special ops and tactical trope targeted watches like the Nixon Regulus
+that feature two chronographs for timing two simultaneous events, here is a watch
+face that expands upon Andreas Nebinger's Stock Stopwatch Face code to implement this 
+functionality.
+
+ALARM starts/stops timer A, resets on the next start
+LIGHT starts/stops timer B, resets on the next start
+
+When a timer is running, tapping MODE toggles between displaying timers A or B, as
+indicated at the top of the display.
+
+The currently selected timer shows minutes, seconds, and 100ths of seconds until the
+timed event passes the hour mark. Then it shows hours, minutes, and seconds. Once
+it runs for more than a day it shows days, hours, and minutes. The blinking colon
+indicates that the timer is running.
+
+The longest time span the timers are able to track as 99 days and 23:59:59:99 hours and
+they will simply stop.
+
+If the other timer that is not currently selected is also running then a plus sign is
+blinking next to the A or B indicator. Its progress is indicated by showing the timer's
+currently highest time unit ( 100ths of seconds if less than a second, seconds if less
+than a minute, minutes if less than an hour, hours if less than a day, days if more than
+a day).
+
+Please Note: If at least one timer is running then the default function of the MODE
+button to move to the next watch face is disabled to be able to use it to toggle between
+the timers. In this case LONG PRESSING MODE will move to the next face instead of moving
+back to the default watch face.
+
+IMPORTANT: This watch face uses the same TC2 callback counter as the Stock Stopwatch
+watch-face. It works through calling a global handler function. The two watch-faces
+therefore can't coexist within the same firmware. If you want to compile this watch-face
+then you need to remove the line <../watch_faces/complication/stock_stopwatch_face.c \>
+from the Makefile.
 
 Flashlight
 ----------
 [`flashlight_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/flashlight_face.h)
 
-TODO
+A flashlight for use with the Flashlight sensor board.
+
+When the watch face appears, the display will show "FL" in the top two positions.
+Pressing the Light button will toggle the flashlight on and off.
 
 Geomancy
 --------
 [`geomancy_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/geomancy_face.h)
 
-TODO
+A simple and straightforward watch face for the ancient Eastern geomantic divination system
+of I Ching and the western system of "Geomancy". It is an optional addition to the Toss Up
+Face.
+
+The LIGHT button toggles between the two systems of geomancy.
+
+The ALARM button casts an I Ching hexagram or Geomantic figure based on drawing virtual
+stalks from the True Random Number Generator in the Sensor Watch.
+
+The figures are flipped 90 degrees clockwise, so the left side is the bottom and the
+right side the top.
+
+LONG PRESSING ALARM toggles the display of the King Wen sequence index for the cast I Ching
+Hexagram (https://en.wikipedia.org/wiki/King_Wen_sequence )or the abbreviated name for the
+cast Geomantic Figure:
+
+GF - Greater Fortune (Fortuna Major)
+LF - Lesser Fortune (Fortuna Minor)
+PO - Populus
+VI - Via
+AL - Albus
+CO - Conjunctio
+PA - Puella
+AM - Amissio
+PR - Puer
+RU - Rubeus
+AQ - Acquisitio
+LA - Laetitia
+TR - Tristitia
+CA - Carcer
+HD - Head of the Dragon (Caput Draconis)
+TD - Tail of the Dragon (Cauda Draconis)
 
 Habit
 -----
 [`habit_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/habit_face.h)
 
-TODO
+Allows the user to record a single succesful instance of a particular habit
+occuring per day, and displays history for eight days prior as well as a
+total counter.
 
 Interval
 --------
@@ -255,7 +427,92 @@ Morse Calculator
 ----------------
 [`morsecalc_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/morsecalc_face.h)
 
-TODO
+Morse-code-based RPN calculator
+
+The calculator is operated by first composing a **token** in Morse code,
+then submitting it to the calculator. A token specifies either a calculator
+operation or a float value.
+
+These two parts of the codebase are totally independent:
+ 1. The Morse-code reader (`mc.h`, `mc.c`)
+ 2. The RPN calculator (`calc.h`, `calc.c`, `calc_fn.h`, `calc_fn.c`, `small_strtod.c`)
+
+The user interface (`morsecalc_face.h`, `morsecalc_face.c`) lets you talk
+to the RPN calculator through Morse code.
+
+### Controls
+ - `light` is dash
+ - `alarm` is dot
+ - `mode` is "finish character"
+ - long-press `mode` or submit a blank token to switch faces
+ - long-press `alarm` to show stack
+ - long-press `light` to toggle the light
+
+### Morse code token entry
+As you enter `.`s and `-`s, the morse code char you've entered will
+appear in the top center digit. At the top right is the # of morse code
+`.`/`-` you've input so far. The character resets at the 6th `.`/`-`.
+
+Once you have the character you want to enter, push `mode` to enter it.
+
+The character will be appended to the current token, whose 6 trailing
+chars are shown on the main display. Once you've typed in the token you
+want, enter a blank Morse code character and then push `mode`.
+This submits it to the calculator.
+
+Special characters:
+ - Backspace is `(` (`-.--.`).
+ - Clear token input without submitting to calculator is `Start
+   transmission` (`-.-.-`).
+
+### Writing commands
+First the calculator will try to interpret the token as a command/stack operation.
+Commands are defined in `calc_dict[]` in `movement/lib/morsecalc/calc_fns.h`.
+If the command doesn't appear in the dictionary, the calculator tries to interpret the token as a number.
+
+### Writing numbers
+Numbers are written like floating point strings.
+Entering a number pushes it to the top of the stack if there's room.
+This can get long, so for convenience numerals can also be written in binary with .- = 01.
+
+    0   1    2    3    4    5    6    7    8    9
+    .   -    -.   --   -..  -.-  --.  ---  -... -..-
+    e   t    n    m    d    k    g    o    b    x
+
+ - Exponent signs must be entered as "p".
+ - Decimal place "." can be entered as "h" (code ....)
+ - Sign "-" can be entered as "Ch digraph" (code ----)
+
+For example: "4.2e-3" can be entered directly, or as "4h2pC3"
+  similarly, "0.0042" can also be entered as "eheedn"
+Once you submit a number to the watch face, it pushes it to the top of the stack if there's room.
+
+### Number display
+After a command runs, the top of the stack is displayed in this format:
+
+  - Main 4 digits = leading 4 digits
+  - Last 2 digits = exponent
+  - Top middle = [Stack location, Sign of number]
+  - Top right = [Stack exponent, Sign of exponent]
+
+Blank sign digit means positive.
+So for example, the watch face might look like this:
+
+    [   0 -5]
+    [4200 03]
+
+... representing `+4.200e-3` is in stack location 0 (the top) and it's one of five items in the stack.
+
+### Looking at the stack
+To show the top of the stack, push and hold `light`/`alarm` or submit a blank token by pushing `mode` a bunch of times.
+To show the N-th stack item (0 through 9):
+
+ - Put in the Morse code for N without pushing the mode button.
+ - Push and hold `alarm`.
+
+To show the memory register, use `m` instead of a number.
+
+To see all the calculator operations and their token aliases, see the `calc_dict[]` struct in `calc_fns.h`
 
 Orrery
 ------
@@ -285,19 +542,110 @@ Planetary Hours
 ---------------
 [`planetary_hours_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/planetary_hours_face.h)
 
-TODO
+### Background
+
+Both the 24 hour day and the order of our weekdays have quite esoteric roots.
+The ancient Egyptians divided the day up into 12 hours of sunlight and 12 hours
+of night time. Obviously the length of these hours varied throughout the year.
+
+The Greeks assigned each hour a ruler of the planetary gods in the ancient
+"Chaldean" order from slowest (Chronos for Saturn) to fastest (Selene for Moon).
+Because 24 hours cannot be equally divided by seven, the planetary rulers carried
+over to the first hour of the next day, effectively ruling over the entire day 
+and lending the whole day their name. The seven day week was born.
+
+### PLANETARY HOUR CHART COMPLICATION
+
+This complication watch face displays the start time of the current planetary hour 
+according to the given location and day of the year. The number of the current
+planetary hour (1 - 24) is indicated at the top right.
+
+Short pressing the ALARM button flips through the start times of the following 
+planetary hours, long pressing it flips backwards in time. A long press of the 
+LIGHT button immediately switches back to the start time of the current hour.
+The Bell indicator always marks the current planetary hour in the list.
+The LAP indicator shows up when the hours of the next phase are part of the 
+upcoming day instead of the current one. This happens when the watch face is 
+launched after sunset.
+
+The planetary ruler of the current hour and day is displayed at the top in 
+Latin or Greek shorthand notation:
+
+Saturn (SA) / Chronos (CH) / ♄
+Jupiter (JU) / Zeus (ZE) / ♃
+Mars (MA) / Ares (AR) / ♂
+Sol (SO) / Helios (HE) / ☉
+Venus (VE) / Aphrodite (AF) / ♀
+Mercury (ME) / Hermes (HR) / ☿
+Luna (LU) / Selene (SE) / ☾
+
+A short press of the LIGHT button toggles between Latin and Greek ruler shorthand
+notation.
+
+(IMPORTANT: Make sure the watch's time, timezone and location are set correctly for this
+watch face to work properly!)
 
 Planetary Time
 --------------
 [`planetary_time_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/planetary_time_face.h)
 
-TODO
+### BACKGROUND
+
+Both the 24 hour day and the order of our weekdays have quite esoteric roots.
+The ancient Egyptians divided the day up into 12 hours of sunlight and 12 hours
+of night time. Obviously the length of these hours varied throughout the year.
+
+The Greeks assigned each hour a ruler of the planetary gods in the ancient
+"Chaldean" order from slowest (Chronos for Saturn) to fastest (Selene for Moon).
+Because 24 hours cannot be equally divided by seven, the planetary rulers carried
+over to the first hour of the next day, effectively ruling over the entire day 
+and lending the whole day their name. The seven day week was born.
+
+### PLANETARY TIME COMPLICATION
+
+The hour digits of this complication watch-face display the current planetary hour 
+according to the given location and day of the year (First hour from 12am to 1am,
+the second hour from 1am to 2am, and so forth).
+
+Like with normal clocks the minutes and seconds help dividing the hour into smaller
+units. On this watch-face, all units naturally vary in length because the planetary
+hours are not fixed by duration but by the moments of sunrise and sunset which 
+obviously vary throughout the year, especially in higher latitudes.
+
+On this watch-face the hours indicated as 12am to 12pm (00:00 - 12:00) are used for
+the planetary daytime hours between sunrise and sunset and hours indicated as 12pm 
+to 12am (12:00 - 00:00) are used for the planetary night hours after sunset and before 
+sunrise.
+
+The planetary ruler of the current hour and day is displayed at the top in Latin or 
+Greek shorthand notation:
+
+Saturn (SA) / Chronos (CH) / ♄
+Jupiter (JU) / Zeus (ZE) / ♃
+Mars (MA) / Ares (AR) / ♂
+Sol (SO) / Helios (HE) / ☉
+Venus (VE) / Aphrodite (AF) / ♀
+Mercury (ME) / Hermes (HR) / ☿
+Luna (LU) / Selene (SE) / ☾
+
+The ALARM button toggles between displaying the ruler of the hour and the ruler of the day
+
+The LIGHT button toggles between Latin and Greek ruler shorthand notation
+
+(IMPORTANT: Make sure the watch's time, timezone and location are set correctly for this
+watch face to work properly!)
 
 Probability
 -----------
 [`probability_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/probability_face.h)
 
-TODO
+This face is a dice-rolling random number generator.
+Supports dice with 2, 4, 6, 8, 10, 12, 20, or 100 sides.
+
+Press LIGHT to cycle through die type.
+The current die size is indicated on the left ("C" for 100)
+
+Press ALARM to roll the selected die.
 
 Pulsometer
 ----------
@@ -316,13 +664,51 @@ Randonaut
 ---------
 [`randonaut_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/randonaut_face.h)
 
-TODO
+Randonauting is a way to turn the world around you into an adventure and get the user outside 
+of their day-to-day routine by using a random number generator to derive a coordinate to journey 
+to. In Randonauts lore so-called "Blind Spots" are places you cannot reach methodologically. They
+may exist in your own backyard for your whole life and you will never even notice them, because 
+you simply have no reason to go to that exact place or look in its direction. Since the very 
+limitations of our behavioral algorithms are the reason for the existence of blindspots, they 
+can only be found using a randomizer.
+
+This watch face generates a random location based on the watch's location and a set radius using
+the official Randonautica Blind Spot algorithm.
+
+The ALARM button starts the random location generation and then automatically displays the found
+Blind Spot.
+
+By pressing ALARM again the user can flip through different pieces of information about the Blind
+Spot: Distance (DI), Bearing Degree (BE), Latitude degrees and decimal digits (LA), Longitude 
+degrees and decimal digits (LO).
+
+Pressing LIGHT switches between generating a new blind spot ("Rando") and displaying the info of
+the last generated one ("Point").
+
+LONG PRESSING LIGHT toggles setup mode. Here pressing LIGHT switches between setting the desired
+radius (RA) and setting the random number generator (RNG) for generating the blind spot. 
+
+ALARM changes the values respectively:
+
+- The radius can be set in 500 meter steps between 1000 and 10,000 meters
+- The RNG can be set to "true" which utilizes the SAML22J's internal True Random Number Generator
+- Setting it to "psudo" will use the pseudorandom number generation algorithm arc4random
+- Setting it to "chance" will randomly chose either of the RNGs for each generation (default)
+
+LONG PRESSING ALARM toggles DATA mode in which the currently generated Blind Spot coordinate can
+be written to the <place.loc> file on the watch (press ALARM) and set as active high precision 
+location used by other watch faces. It does not overwrite the low precision location information
+in the watch register commonly used for astronomical watch faces.
 
 Rate Meter
 ---------
 [`ratemeter_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/ratemeter_face.h)
 
-TODO
+The rate meter shows the rate per minute at which the ALARM button is
+being pressed. This is particularly useful in sports where cadence
+tracking is useful. For instance, rowing coaches often use a dedicated
+rate meter - clicking the rate button each time the crew puts their oars
+in the water to see the rate (strokes per minute) on the rate meter.
 
 RPN Calculator
 --------------
@@ -409,19 +795,87 @@ RPN Calculator Alternate
 ------------------------
 [`rpn_calculator_alt_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/rpn_calculator_alt_face.h)
 
-TODO
+Operations appear in the 'day' section; ALARM changes between operations when
+operation is flashing. LIGHT executes current operation.
+
+This is the alternate face because it has a non-traditional number entry system which
+I call 'guess a number'. In number entry mode, the watch tries to guess which number you
+want, and you respond with 'smaller' (left - MODE) or larger (right - ALARM). This means
+that when you _are_ entering a number, MODE will no longer move between faces!
+
+Example of entering the number 27
+ - select the NO operation (probably unnecessary, as this is the default),
+   and execute it by hitting LIGHT.
+ - you are now in number entry mode; you know this because nothing is flashing.
+ - Watch displays 10; you hit ALARM to say you want a larger number.
+ - Watch displays 100; you hit MODE to say you want a smaller number.
+ - Continuing: 50 -> MODE -> 30 -> MODE -> 20 -> ALARM -> 27
+ - Hit LIGHT to add the number to the stack (and now 'NO' is flashing
+   again, indicating you're back in operation selection mode).
+
+One other thing to watch out for is how quickly it will switch into scientific notation
+due to the limitations of the display when you have large numbers or non-integer values.
+In this mode, the 'colon' serves at the decimal point, and the numbers in the top right
+are the exponent.
+
+As with the main movement firmware, this has the concept of 'secondary' functions which
+you can jump to by a long hold of ALARM on NO. These are functions to do with stack
+manipulation (pop, swap, dupe, clear, size (le)). If you're _not_ on NO, a long
+hold will take you back to it.
+
+See 'functions' in "rpn_calculator_alt_face.c" for names of all operations.
 
 Sailing
 -------
 [`sailing_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/sailing_face.h)
 
-TODO
+Implements a sailing timer.
+
+Usage:
+
+### Waiting mode:
+LIGHT button enters settings
+ALARM button starts the timer (sailing mode).
+
+### Sailing mode:
+ALARM button switches to next programmed start signal.
+Long press on LIGHT button resets timer and enters waiting mode.
+Countdown to zero, then switch to counting mode.
+
+### Counting mode:
+After the start signal (0s), the duration of the race is counted (like a stopwatch timer).
+ALARM button increases the lap counter, ALARM long press resets lap counter.
+Long press on LIGHT button resets timer and enters waiting mode.
+
+### Setting mode:
+ALARM button increases active (blinking) signal. Goes to 0 if upper boundary
+(11 or whatever the signal left to the active one is set to) is met.
+10 is printed vertically (letter o plus top segment).
+ALARM button long press resets to default minutes (5-4-1-0).
+LIGHT button cycles through the signals.
+Long press on LIGHT button cycles through sound modes:
+- Bell indicator: Sound at start (0s) only.
+- Signal indicator: Sound at each programmed signal and at start.
+- Bell+Signal: Sound at each minute, at 30s and at 10s countdown.
+- No indicator: No sound.
 
 Ship's Bell
 -----------
 [`ships_bell_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/ships_bell_face.h)
 
-TODO
+A [ship's bell](https://en.wikipedia.org/wiki/Ship%27s_bell#Simpler_system) complication.
+
+Similar to the default hourly signal of the simple_clock_face this complication will use the buzzer to signal
+the time in half-hour intervals according to the scheme mentioned above.
+
+Additionally, the user can specify one of the three watches
+of the standard merchant watch system to only receive signals during this watch.
+
+If no watch is specified all signals are emitted.
+
+Usage:
+  - short press Alarm button: Turn on/off bell
+  - long press Alarm button: Cycle through the watches (All/1/2/3)
 
 Stock Stopwatch
 ---------------
@@ -463,25 +917,99 @@ Tachymeter
 ----------
 [`tachymeter_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/tachymeter_face.h)
 
-TODO
+The Tachymeter complication emulates the tachymeter function often
+present in watches, that computes the average speed in [units per hour]
+for a given distance given in [units].
+
+Use case:
+* User sets the distance
+* User starts the tachymeter when the trip begins
+* User stops the tachymeter when the trip ends
+* The watch presents the average speed and trip duration in seconds
+
+Usage:
+* Go to tachymeter face, TC is shown in the Weekday Digits
+* A steady d in the Day Digits indicates the distance to be used.
+    * To edit the distance:
+    * Long-press the Alarm button, the distance edition page (d will blink)
+    * Use the Light button to change the editing (blinking) digit, and press Alarm to increase its value
+    * Once done, long-press the Alarm button to exit the distance edition page
+* Press the Alarm button to start the tachymeter.
+    * A running animation will appear in the Day Digits
+* Press the Alarm button to stop the tachymeter
+* The average speed and total time information will alternate.
+    * The average speed will be shown alongside /h in the Day Digits; and the total time will be shown alongside t in the Day Digits.
+* Long press the Light button to return to the distance d page, and restart the tachymeter from there.
+* Long-press the light button in the steady distance page to reset the distance to 1.00
+
+Pending design points
+* movement_request_tick_frequency(4) is used to obtain a 4Hz ticking, thus
+  having a time resolution of 250 ms. Not sure if using event.subsecond`
+  is the proper way to get the fractions of second for the start and
+  final times.
+* For distance and average speed, the Second Digits (position 8 and 9)
+  can be seen as decimals, thus possible to show distances as short as
+  0.01 km (or miles) and speeds as low as 0.01 km/h (or mph). However,
+  if the same idea is used for the total time (showing hundredths),
+  this limits the display to 9999.99 seconds (~2h:45m).
 
 Tally
 -----
 [`tally_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/tally_face.h)
 
-TODO
+Tally face is designed to act as a tally counter.
+Based on the counter_face watch face by Shogo Okamoto.
+
+To advance the counter, press the ALARM button.
+To reset, long press the ALARM button.
 
 Tarot
 -----
 [`tarot_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/tarot_face.h)
 
-TODO
+Draw from a deck of tarot cards. Can choose between major arcana only or
+entire deck.
+
+In tarot reading, a card orientation can be upright or inverted, and the
+interpertation of the card can change depending on this state. This face
+lights the alarm indicator to show when a card is inverted. Just ignore it
+if you prefer not to deal with card inversions.
+
+This face uses the terms "Wands", "Cups", "Swords" and "Coins" for the four
+suits, and numbers to represent the 14 ranked cards, with the cards 11-14
+representing the Page, the Knight, the Queen, and King respectively.
+
+Default draw is a 3-card major arcana spread.
+
+To make it easier to keep track of where you are in the list of drawn cards,
+after drawing, "St" is shown for the 1st card in the spread and "En" is
+shown for the last card.
+
+At any point, the mode button can be held to return to your first configured
+watch face.
+
+When "Major" or "All" is shown:
+- Light button: cycle # of cards to draw
+- Light button (long press): toggle between major arcana and all cards
+- Alarm button: shuffle deck and draw cards
+
+After cards are drawn/showing:
+- Light button: view the next drawn card
+- Alarm button: shuffle and re-draw new cards
+- Light button (long press): go back to Draw screen, for choosing different draw parameters.
 
 Temperature Chart
 -----------------
 [`tempchart_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/tempchart_face.h)
 
-TODO
+Gathers temperature statistics in a chart form.
+Statistics bins are per hour / per 0.5°C.
+
+Saved to file every day at 00:00.
+Can help improve watch precision in the future. 
+
+If you can gather statistics over few months, and then send "tempchart.ini"
+to [3@14.by](mailto:3@14.by), it will help future generations of precision quartz watches.
 
 Time Left
 ---------
@@ -531,13 +1059,64 @@ Tomato Productivity Timer
 -------------------------
 [`tomato_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/tomato_face.h)
 
-TODO
+Add a "tomato" timer watch face that alternates between 25 and 5 minute
+timers as in the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique).
+
+The top right letter shows mode (f for focus or b for break).
+The bottom right shows how many focus sessions you've completed.
+(You can reset the count with a long press of alarm)
+
+When you show up and it says 25 minutes, you can start it (alarm),
+ switch to 5 minute (light) mode or leave (mode).
+
+When it's running you can reset (alarm), or leave (mode).
+
+When it's done, we beep and go back to step 1, changing switching
+ mode from focus to break (or break to focus)
 
 Toss Up
 -------
 [`toss_up_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/toss_up_face.h)
 
-TODO
+Playful watch face for games of chance or divination using coins or dice.
+
+LIGHT switches between Coins and Dice mode
+
+### COINS
+
+ALARM tosses a coin. If it lands on heads it gets sorted to the left side of the
+display, if it lands on tails then sorted to the right side.
+
+LONG PRESSING ALARM adds up to 5 more coins to the toss for more nuance in the decision
+making (e.g. three heads vs two tails could be read as "yes, but with serious doubts").
+
+LONG PRESSING LIGHT flips through additional style for the coins from the default Ө/O 
+to H/T (heads/tails), Y/N (yes/no), E/Ǝ, C/Ↄ
+
+LONG PRESSING ALARM on the "Coins" title page resets to one coin.
+LONG PRESSING LIGHT on the "Coins" title page resets the style to Ө/O
+
+### DICE
+
+ALARM rolls a six sided dice.
+
+LONG PRESSING ALARM adds up to 2 more dice to the roll.
+
+LONG PRESSING LIGHT flips through other available polyhedral dice types with less or more
+than the default 6 sides. The options are D2, D4, D6, D8, D10, D12, D20, D24, D30, D32, D36, 
+D48, and a hypothetical D99. 
+
+When more than one dice is used for a roll this changes only the last added dice. (see Note
+below)
+
+LONG PRESSING ALARM on the "Dice" title page resets to one dice.
+LONG PRESSING LIGHT on the "Dice" title page resets the dice to D6.
+
+Please Note: If you need let's say a D8, D12, and D20 for your rolls then the procedure to
+set this up would be as follows: from the default screen where you can roll the one D6 dice 
+you would LONG PRESS LIGHT a few times to change the D6 to a D8, then LONG PRESS ALARM to add 
+a second dice, LONG PRESS LIGHT again until the second dice changes to D12, then LONG PRESS
+ALARM to add the third dice and LONG PRESS LIGHT again a few times until it becomes a D20.
 
 TOTP Generator
 --------------
@@ -591,10 +1170,41 @@ TOTP Generator LFS
 ------------------
 [`totp_face_lfs`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/totp_face_lfs.h)
 
-TODO
+Time-based one-time password (TOTP) generator using LFS
+
+Reads from a file "totp_uris.txt", containing a single secret key in a
+series of URLs. Each line is what's in a QR code, e.g.:
+* otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example
+* otpauth://totp/ACME%20Co:john.doe@email.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30
+
+This is also the same as what Aegis exports in plain-text format.
+This face performs minimal sanitisation of input, however.
+
+At the moment, to get the records onto the filesystem, start a serial connection and do:
+  `echo otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example > totp_uris.txt`
+  `echo otpauth://totp/ACME%20Co:john.doe@email.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30 >> totp_uris.txt`
+(note the double >> in the second one)
+
+You may want to customise the characters that appear to identify the 2FA
+code. These are just the first two characters of the issuer, and it's fine
+to modify the URI.
+
+If you have more than one secret key, press ALARM to cycle through them.
 
 Wake
 ----
 [`wake_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/complication/wake_face.h)
 
-TODO
+WAKE daily alarm face
+
+Basic daily alarm clock face. Seems useful if nothing else in the interest
+of feature parity with the F-91W’s OEM module, 593.
+
+Also experiments with caret-free UI: One button cycles hours, the other
+minutes, so there’s no toggling between display and adjust modes and no
+cycling the caret through the UI.
+
+* LIGHT advances hour by 1
+* LIGHT long press advances hour by 6
+* ALARM advances minute by 10
+* ALARM long press cycles through signal modes (just one at the moment)

@@ -25,7 +25,26 @@ Chirpy
 ------
 [`chirpy_demo_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/demo/chirpy_demo_face.h)
 
-TODO
+This face demonstrates the chirpy-tx library. It is intended to help you
+include chirpy-tx in your own watch faces that need to transmit data out
+of the watch.
+
+The face's first screen lets you select from a few built-in transmissions:
+
+SCALE cycles through frequencies in fixed increments. This is intended to
+collect and analyze audio samples from different watches. With this info
+it may be possible to improve chirpy-tx's parameters like the frequencies
+it uses to make the method more robust.
+
+SHORT is a small transmission that contains data taked from the activity_face.
+
+LONG is a longer transmission that contains the first two strophes of a
+famous sea shanty.
+
+Select the transmission you want with ALARM, the press LONG ALARM to chirp.
+
+To record and decode a chirpy transmission on your computer, you can
+[use the web app here](https://jealousmarkup.xyz/off/chirpy/rx/).
 
 Demo
 ----
@@ -39,13 +58,20 @@ Frequency Correction
 --------------------
 [`frequency_correction_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/demo/frequency_correction_face.h)
 
-TODO
+While active, this face generates a square-wave on pin A1 of the 9-pin
+connector. The output frequency is adjustable from 64 Hz to 0.5 Hz.
+Long-press ALARM to cycle through available frequencies.
+
+This face also displays the value of the watch's frequency-correction
+register. This setting varies from -127 to +127. Press LIGHT to increment
+or ALARM to decrement the setting.
 
 Hello There
 -----------
 [`hello_there_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/demo/hello_there_face.h)
 
-TODO
+A simple demo that displays the word "Hello" and then the word "there",
+on an endless loop. Press ALARM to pause or resume the animation.
 
 LIS2DW Accelerometer Data Logger
 --------------------------------
