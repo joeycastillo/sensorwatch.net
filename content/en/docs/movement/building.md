@@ -34,27 +34,27 @@ Install the cross-compiling toolchain on Windows
 * Download the [GNU ARM Embedded Toolchain for Windows](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-win32.exe?rev=29bb46cfa0434fbda93abb33c1d480e6&hash=B2C5AAE07841929A0D0BF460896D6E52)
 
 * Install
-** On the final screen choose the option to add to path
-** if you dont, then the readme has instructions to set the path
+* On the final screen choose the option to add to path
+* if you dont, then the readme has instructions to set the path
 
 * Download [GnuCoreUtilities](https://gnuwin32.sourceforge.net/packages/coreutils.htm)
 
 * Install and add to path
-** `set PATH="C:\Program Files (x86)\GnuWin32\bin";%PATH%`
+* `set PATH="C:\Program Files (x86)\GnuWin32\bin";%PATH%`
 
 * Create an alias 
-** `doskey gmkdir="C:\Program Files (x86)\GnuWin32\bin\mkdir" $*`
+* `doskey gmkdir="C:\Program Files (x86)\GnuWin32\bin\mkdir" $*`
 
 * Download [GnuMake](https://gnuwin32.sourceforge.net/packages/make.htm)
 
 * Install and add to path
-** `set PATH="C:\Program Files (x86)\GnuWin32\bin";%PATH%`	
+* `set PATH="C:\Program Files (x86)\GnuWin32\bin";%PATH%`	
 
 * Download [Python](https://www.python.org/downloads/windows/)
 
 * Install and add to path
 * Create an alias
-** `doskey python3="C:\Users\dgran\AppData\Local\Programs\Python\Python312\python" $*`
+* `doskey python3="C:\Users\dgran\AppData\Local\Programs\Python\Python312\python" $*`
 
 Compile firmware
 ----------------
