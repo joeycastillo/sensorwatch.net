@@ -34,6 +34,7 @@ Compile firmware
 * From within the [repo](https://github.com/joeycastillo/Sensor-Watch):
 * `cd movement/make`
 * `make COLOR=RED` (for Sensor Watch Lite boards), or for classic green boards, just `make`
+  * You can also add `LANGUAGE=SPANISH`, `LANGUAGE=GERMAN`, or `LANGUAGE=MAORI` to build a version with the UI translated into that language.
 
 The built firmware will be at `build/watch.uf2`. You can now [flash](/docs/firmware/flashing) this firmware to your watch.
 
