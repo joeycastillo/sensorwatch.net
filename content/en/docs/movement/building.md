@@ -37,6 +37,14 @@ Compile firmware
 
 The built firmware will be at `build/watch.uf2`. You can now [flash](/docs/firmware/flashing) this firmware to your watch.
 
+Docker
+----------------------------------------------
+* From within the [repo](https://github.com/joeycastillo/Sensor-Watch):
+* `docker build --build-arg USERID=$(id -u) -t sensorwatch .`
+* `docker run --rm -v $(pwd):/src -e COLOR=RED sensorwatch make` (for Sensor Watch Lite boards)
+
+The built firmware will be at `movement/make/build/watch.uf2`. You can now [flash](/docs/firmware/flashing) this firmware to your watch
+
 "I just want to pick my own set of watchfaces"
 ----------------------------------------------
 
