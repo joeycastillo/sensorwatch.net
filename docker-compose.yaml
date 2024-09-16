@@ -3,10 +3,8 @@ version: "3.3"
 services:
 
   site:
-    image: docsy/docsy-example
-    build:
-      context: .
-    command: server
+    image: hugomods/hugo:go-git-0.123.8
+    command: hugo server --gc --minify --bind 0.0.0.0
     ports:
       - "1313:1313"
     volumes:
