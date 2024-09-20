@@ -71,6 +71,7 @@ For folks who want to use the watch for productivity.
 * Tomato Timer (by Wesley Ellis) - A productivity timer varietal.
 * Stopwatch (by Wesley Ellis) - A simple stopwatch with one-second resolution.
 * Countdown (by Wesley Ellis) - A simple countdown timer for eggs, tea or tasks.
+* Alarm - Basic daily alarm.
 
 Download it now: for [Red Boards](/docs/firmware/download/focus-red.uf2), [Green Boards](/docs/firmware/download/focus-green.uf2) and [Blue Boards](/docs/firmware/download/focus-blue.uf2)
 
