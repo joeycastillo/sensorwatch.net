@@ -52,7 +52,7 @@ Controls:
 
 Temperature Display
 -------------------
-[`thermistor_logging_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/sensor/thermistor_logging_face.h)
+[`thermistor_readout_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/sensor/thermistor_readout_face.h)
 
 This watch face is designed to work with either the Temperature + GPIO sensor board or the Temperature + Light sensor board. It reads the current temperature from the thermistor voltage divider on the sensor board, and displays the current temperature in degrees Celsius.
 
@@ -64,7 +64,7 @@ Pressing the Alarm button toggles the unit display from Celsius to Fahrenheit. T
 
 Temperature Log
 ---------------
-[`thermistor_readout_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/sensor/thermistor_readout_face.h)
+[`thermistor_logging_face`](https://github.com/joeycastillo/Sensor-Watch/blob/main/movement/watch_faces/sensor/thermistor_logging_face.h)
 
 This watch face automatically logs the temperature once an hour, and maintains a 36-hour log of readings. This watch face is admittedly rather complex, and bears some explanation.
 
