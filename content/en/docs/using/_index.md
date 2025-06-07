@@ -22,9 +22,9 @@ A long press of the MODE button behaves differently whether you are on the Clock
 
 The ALARM button is a general purpose button. Where appropriate, a short press of the ALARM button will take an action: on the Stopwatch face, the ALARM button starts or stops the stopwatch. On the Countdown face, it starts or stops the countdown.
 
-For watch faces with configurable options, a long press of the ALARM button can either change those options directly or enter a secondary mode for configuring the watch face. On the Clock face, for example, a long press of the ALARM button toggles the hourly chime, and on the Temperature watch face it toggles metric vs imperial units (Celsius or Fahrenheit). On the Sunrise/Sunset watch face, a long press of the ALARM button enters the latitude / longitude settings screen; on World Clock, it allows you to add a name and configure the time zone.
+For watch faces with configurable options, a long press of the ALARM button can either change those options directly, or enter a secondary mode for configuring the watch face. On the [Clock](/docs/using/clock/) face, for example, a long press of the ALARM button toggles the hourly chime, and on the [Temperature](/docs/using/temperature/) watch face it toggles metric vs imperial units (Celsius or Fahrenheit). On the [Sunrise/Sunset](/docs/using/sunrise/) watch face, a long press of the ALARM button enters the latitude / longitude settings screen; on [World Clock](/docs/using/worldclock/), it allows you to add a name and configure the time zone.
 
-A short press of the ALARM button can also advance a value: in the Time Set watch face, pressing Alarm while setting (say) the month, advances the year by one. Pressing it again advances it again, until you reach the final value and it loops around.
+A short press of the ALARM button can also advance a value: in the [Time Set](/docs/using/timeset/) watch face, pressing Alarm while setting (say) the month, advances the year by one. Pressing it again advances it again, until you reach the final value and it loops around.
 
 ### The LIGHT button
 
