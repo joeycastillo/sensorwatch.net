@@ -3,156 +3,84 @@ title: "Prebuilt Alternative Firmware for Sensor Watch"
 linkTitle: "Prebuilt Alternative Firmware for Sensor Watch"
 weight: 20
 ---
-This section contains the stock firmware for Sensor Watch, as well as several prebuilt firmware images featuring an alternative set of watch faces. To flash one of these firmware images to your Sensor Watch, [follow the instructions here](/docs/firmware/flashing/).
+As part of the move to Second Movement, we are paring down the number of alternative firmware images available on this page. Soon an online watch face builder will make it easier to build your own firmware, tailored to your device, with just the watch faces you want to make use of. In the meantime, we are offering two firmware images: the standard Movement firmware image, and an alternative version that supports experimentation with activity tracking.
 
-### Prebuilt Firmwares
+Select the firmware image that matches both the color of your Sensor Watch board and the display you are using. Note that unless you bought a custom LCD from Crowd Supply, and swapped it out for the original Casio LCD that came with your wristwatch, you probably want to download variant 1: Original Casio display. Plug your board into a USB Micro-B cable, double tap the Reset button (the LED should pulse in red), and drag the new firmware over to the WATCHBOOT drive.
 
-Note that each firmware comes in three flavors, depending on the color of your circuit board: 
+If you drag over the wrong color of firmware, i.e. if you put the blue/green firmware onto a red board, or the red firmware onto a Pro board, the LED will likely light up in yellow or white before you even unplug the board. This indicates an error; if this happens, double tap Reset, and drag the correct firmware onto your board.
 
-* There are a few Special Edition boards with a red/blue LED that are blue in color. For these boards, you should download the blue firmware.
-* The classic Sensor Watch circuit board was green. If you have this board, you should download the green firmware.
-* The new Sensor Watch Lite circuit board is red. For these boards, download the red firmware.
+If you drag over the wrong display variant, i.e. a Classic display when you have the custom LCD or vice versa, the display will appear garbled and unreadable when assembled. Disassemble the watch and repeat the above steps with the correct firmware image.
 
-If you put the wrong color of firmware on a board — specifically, if you put the blue/green firmware onto a red board or vice versa — the LED will light up bright yellow to indicate that there was a mismatch. Make sure to match the color of firmware to the color of your board!
+Note that all of these firmware images have the "Preferences" and "Time Set" screens hidden behind a long press of the Mode button from the Clock display. To set the time or change your settings, you must long-press the Mode button once, and then press it a few more times until you reach those screens.
 
-Also note that all of these have the "Preferences" and "Time Set" screens at the end; for brevity they aren't included in this listing, but you will always have access to them.
+* [Second Movement Standard Edition](#second-movement-standard-edition)
+* [Second Movement Activity Explorer](#second-movement-activity-explorer)
 
-* [Movement Standard Edition](#movement-standard): Simple Clock, World Clock, Sunrise/Sunset, Moon Phase, Stopwatch
-* [Movement Backer Edition](#movement-backer-edition-with-temperature-display): Simple Clock, World Clock, Sunrise/Sunset, Moon Phase, Temperature
-* [Focus](#focus): Simple Clock, Tomato Timer, Stopwatch, Countdown
-* [The Athlete](#the-athlete): Simple Clock, Stopwatch, Countdown, Exercise Counter, Pulsometer
-* [The Backpacker](#the-backpacker): Simple Clock, Sunrise/Sunset, Moon Phase, Temperature, Temperature Log, Blinky Light
-* [The Stargazer](#the-stargazer): Simple Clock, Astronomy, Sunrise/Sunset, Moon Phase
-* [Deep Space Now](#deep-space-now): Simple Clock, Mars Time, World Clock x3
-* [alt.time](#alttime): Simple Clock, Beat Time, Day One
+Second Movement Standard Edition
+--------------------------------
 
-Movement Standard
------------------
+**Optional Sensor Boards:** Temperature Sensor, Motion Sensor
 
-This is the standard firmware for Movement. It's packed, but not jam-packed:
+This is the standard firmware for Second Movement.
 
-* Simple Clock - A basic clock with date for timekeeping.
-* World Clock - You can configure this with a custom two-letter title and any time zone.
-* Sunrise/Sunset - Local sunrise and sunset times.
-* Moon Phase - Tonight's moon phase. (press Alarm to see days in the future)
-* Stopwatch (by Wesley Ellis) - A simple stopwatch with one-second resolution.
+* Sensor Watch Lite
+    1. [Original Casio display](/docs/firmware/download/standard_red_classic.uf2)
+    1. [New Custom LCD](/docs/firmware/download/standard_red_custom.uf2)
+* Sensor Watch Pro
+    1. [Original Casio display](/docs/firmware/download/standard_pro_classic.uf2)
+    1. [New Custom LCD](/docs/firmware/download/standard_pro_custom.uf2)
+* Sensor Watch Classic (green boards)
+    1. [Original Casio display](/docs/firmware/download/standard_green_classic.uf2)
+    1. [New Custom LCD](/docs/firmware/download/standard_green_custom.uf2)
+* Limited Edition Sensor Watch (blue boards)
+    1. [Original Casio display](/docs/firmware/download/standard_blue_classic.uf2)
+    1. [New Custom LCD](/docs/firmware/download/standard_blue_custom.uf2)
 
-Download it now: for [Red Boards](/docs/firmware/download/standard-red.uf2), [Green Boards](/docs/firmware/download/standard-green.uf2) and [Blue Boards](/docs/firmware/download/standard-blue.uf2)
+This firmware image contains the following watch faces: 
 
-Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/standard/)
+* Simple Clock - A basic clock with date for timekeeping. Long press ALARM to toggle hourly chime.
+* World Clock - Long press ALARM to configure with a custom two- or three-letter title and time zone.
+* Sunrise/Sunset - Local sunrise and sunset times. (Press Alarm to see the next sunrise / sunset)
+* Moon Phase - Today's moon phase. (press Alarm to see days in the future, if you want to know i.e. the next full moon)
+* Stopwatch (by Wesley Ellis) - A stopwatch with one-second resolution.
+* Countdown (by Wesley Ellis) - A countdown timer.
+* Alarm (by Josh Berson) - A simple alarm that fires daily at the same time.
+* _After a long press of the Mode button:_
+    * Temperature Display - shows the current temperature, if a temperature sensor is available. If not, this watch face is skipped.
+    * Battery - Shows the current battery voltage.
+    * Settings - Allows you to configure your device. You can set: clock mode (12/24 hour), button volume (no beep / low / high), Timeout (for some watch faces to snap back to the Clock view), low energy timeout (how long until entering sleep mode), LED duration and finally LED color (red / green / blue from 0 to 15).
+    * Time Set - Allows you to set the system time. You will first set the year, month and day, then the time zone, then the hour, minute and second.
 
-Movement: Backer Edition (with temperature display)
----------------------------------------------------
+Second Movement Activity Explorer
+---------------------------------
 
-**Required Sensor Board:** Temperature Sensor
+**Required Sensor Board:** Motion Sensor
 
-The first Sensor Watch boards that shipped were with orders that automatically included a temperature sensor board. As such, the set of watch faces that shipped with those boards included a temperature display.
+* Sensor Watch Pro
+    1. [Original Casio display](/docs/firmware/download/activity_pro_classic.uf2)
+    1. [New Custom LCD](/docs/firmware/download/activity_pro_custom.uf2)
+* Sensor Watch Classic (green boards)
+    1. [Original Casio display](/docs/firmware/download/activity_green_classic.uf2)
+    1. [New Custom LCD](/docs/firmware/download/activity_green_custom.uf2)
+* Limited Edition Sensor Watch (blue boards)
+    1. [Original Casio display](/docs/firmware/download/activity_blue_classic.uf2)
+    1. [New Custom LCD](/docs/firmware/download/activity_blue_custom.uf2)
 
-Post-campaign, the temperature sensor board was optional, so we replaced the temperature display with a stopwatch. If you bought a temperature sensor board and wish to have a temperature display, use this firmware; it's identical to the standard firmware, but replaces the stopwatch with a temperature display.
+_Does not work with Sensor Watch Lite, which lacks exposed I2C pins._
 
-* Simple Clock - A basic clock with date for timekeeping.
-* World Clock - You can configure this with a custom two-letter title and any time zone.
-* Sunrise/Sunset - Local sunrise and sunset times.
-* Moon Phase - Tonight's moon phase. (press Alarm to see days in the future)
-* Temperature - As measured from the temperature sensor board. (Alarm toggles C or F)
+This firmware image contains the following watch faces: 
 
-Download it now: for [Red Boards](/docs/firmware/download/backer-red.uf2), [Green Boards](/docs/firmware/download/backer-green.uf2) and [Blue Boards](/docs/firmware/download/backer-blue.uf2)
-
-Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/backer/)
-
-Focus
------
-
-**Required Mod:** Tomato and countdown timer requires soldering the buzzer connector.
-
-For folks who want to use the watch for productivity.
-
-* Simple Clock - A basic clock with date for timekeeping.
-* Tomato Timer (by Wesley Ellis) - A productivity timer varietal.
-* Stopwatch (by Wesley Ellis) - A simple stopwatch with one-second resolution.
-* Countdown (by Wesley Ellis) - A simple countdown timer for eggs, tea or tasks.
-* Alarm - Basic daily alarm.
-
-Download it now: for [Red Boards](/docs/firmware/download/focus-red.uf2), [Green Boards](/docs/firmware/download/focus-green.uf2) and [Blue Boards](/docs/firmware/download/focus-blue.uf2)
-
-Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/focus/)
-
-The Athlete
------------
-
-**Required Mod:** Countdown timer requires soldering the buzzer connector.
-
-For folks who want to use the watch for fitness.
-
-* Simple Clock - A basic clock with date for timekeeping.
-* Stopwatch (by Wesley Ellis) - It counts up.
-* Countdown (by Wesley Ellis) - It counts down.
-* Exercise Counter (by Shogo Okamoto) - Designed for tracking a number of exercises by pressing the Alarm button.
-* Pulsometer - Hold the Alarm button while touching a vein on your neck, and count 30 beats. Release for your heart rate.
-
-Download it now: for [Red Boards](/docs/firmware/download/the_athlete-red.uf2), [Green Boards](/docs/firmware/download/the_athlete-green.uf2) and [Blue Boards](/docs/firmware/download/the_athlete-blue.uf2)
-
-Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/the_athlete/)
-
-The Backpacker
---------------
-
-**Required Sensor Board:** Temperature Sensor
-
-This watch face is focused on helping you when out in the backcountry.
-
-* Simple Clock - A basic clock with date for timekeeping.
-* Sunrise/Sunset - Local sunrise and sunset times. Don't get caught in the dark!
-* Moon Phase - Tonight's moon phase. For when the sun fails you.
-* Temperature - As measured from the temperature sensor board. (Alarm button toggles C or F)
-* Temperature Log - A 36-hour log. Toss the watch outside your tent to measure overnight lows.
-* Blinky Light - This will chew through your battery, but could be useful in an emergency.
-
-Download it now: for [Red Boards](/docs/firmware/download/the_backpacker-red.uf2), [Green Boards](/docs/firmware/download/the_backpacker-green.uf2) and [Blue Boards](/docs/firmware/download/the_backpacker-blue.uf2)
-
-Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/the_backpacker/)
-
-The Stargazer
--------------
-
-For folks who think space is the place!
-
-* Simple Clock - A basic clock with date for timekeeping.
-* Astronomy - Calculates altitude, azimuth, right ascension and declination for all planets
-* Sunrise/Sunset - Local sunrise and sunset times.
-* Moon Phase - Today's moon phase. (press Alarm to see days in the future)
-
-Download it now: for [Red Boards](/docs/firmware/download/the_stargazer-red.uf2), [Green Boards](/docs/firmware/download/the_stargazer-green.uf2) and [Blue Boards](/docs/firmware/download/the_stargazer-blue.uf2)
-
-Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/the_stargazer/)
-
-Deep Space Now
---------------
-
-For folks who work in deep space. (no, really!)
-
-* Simple Clock - A basic clock with date for timekeeping.
-* Mars Time - Displays Mars Standard Time, or local mean solar time and mission sol for each active mission on Mars.
-* World Clock - One slot for the ground station in Goldstone (California, USA)
-* World Clock - One slot for the ground station in Madrid (Spain)
-* World Clock - One slot for the ground station in Canberra (Australia)
-* Day One - Counts the number of days from a given date. Try plugging in the start of a mission (i.e. August 20, 1977) to get mission day.
-
-Download it now: for [Red Boards](/docs/firmware/download/deep_space_now-red.uf2), [Green Boards](/docs/firmware/download/deep_space_now-green.uf2) and [Blue Boards](/docs/firmware/download/deep_space_now-blue.uf2)
-
-Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/deep_space_now/)
-
-alt.time
---------
-
-For fans of alternative timekeeping systems.
-
-* Simple Clock - A basic clock with date for timekeeping.
-* Beat Time (by Wesley Ellis) - AKA Swatch Internet Time, a decimal time standard centered on Switzerland.
-* Day One - Counts the number of days from a given date. Try plugging in your birthday!
-
-I hope to expand this face in the future. (International Fixed Calendar, anyone?)
-
-Download it now: for [Red Boards](/docs/firmware/download/alt_time-red.uf2), [Green Boards](/docs/firmware/download/alt_time-green.uf2) and [Blue Boards](/docs/firmware/download/alt_time-blue.uf2)
-
-Try it out: [Sensor Watch Emulator](/docs/firmware/simulate/alt_time/)
+* Simple Clock - A basic clock with date for timekeeping. Long press ALARM to toggle hourly chime.
+* World Clock - Long press ALARM to configure with a custom two- or three-letter title and time zone.
+* Sunrise/Sunset - Local sunrise and sunset times. (Press Alarm to see the next sunrise / sunset)
+* Moon Phase - Today's moon phase. (press Alarm to see days in the future, if you want to know i.e. the next full moon)
+* Stopwatch (by Wesley Ellis) - A stopwatch with one-second resolution.
+* Countdown (by Wesley Ellis) - A countdown timer.
+* Alarm (by Josh Berson) - A simple alarm that fires daily at the same time.
+* _After a long press of the Mode button:_
+    * Activity Log - A 14-day log of active minutes, defined as two consecutive minutes with acceleration over a given threshold.
+    * Temperature Display - shows the current temperature. On Pro, this will use the on-board thermistor; on green and blue boards, it will use the accelerometer's temperature sensor.
+    * Battery - Shows the current battery voltage.
+    * Accelerometer Status - Shows whether the accelerometer believes the wearer is "Still" or "Active". This state latches for about 10 seconds. A long press of ALARM allows you to change the threshold for "Active" detection.
+    * Settings - Allows you to configure your device. You can set: clock mode (12/24 hour), button volume (no beep / low / high), Timeout (for some watch faces to snap back to the Clock view), low energy timeout (how long until entering sleep mode), LED duration and finally LED color (red / green / blue from 0 to 15).
+    * Time Set - Allows you to set the system time. You will first set the year, month and day, then the time zone, then the hour, minute and second.

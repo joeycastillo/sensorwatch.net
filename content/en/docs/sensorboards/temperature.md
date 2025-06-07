@@ -1,11 +1,11 @@
 ---
 title: "Sensor Watch Accessory Board: Temperature + GPIO"
 linkTitle: "Sensor Watch Accessory Board: Temperature + GPIO"
-weight: 8
+weight: 10
 ---
 ![Rendering: an L-shaped flex PCB labeled “Temperature+GPIO Sensor Board”](../images/temperature-gpio-sensor-board.png)
 
-This sensor board shipped (or will ship) to all Sensor Watch Crowd Supply backers. It is also available for separate purchase at the Sensor Watch page on Crowd Supply.
+This sensor board shipped to all Sensor Watch Crowd Supply backers, and shipped as a standalone upgrade for several years. It is no longer available, as the new Sensor Watch Pro boards have a temperature sensor built in.
 
 Temperature
 -----------

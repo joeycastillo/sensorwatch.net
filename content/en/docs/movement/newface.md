@@ -37,7 +37,7 @@ typedef struct {
 Next, we’ll look to our implementation file, `blink_face.c`, and implement those four functions. Our setup function is simple: when the watch boots, Movement will call this function with a spot for us to stash a pointer to our watch face state. We’ll just allocate some memory for that purpose, and zero it out:
 
 {{< highlight c >}}
-void blink_face_setup(movement_settings_t *settings, uint8_t watch_face_index, void ** context_ptr) {
+void blink_face_setup(uint8_t watch_face_index, void ** context_ptr) {
     if (*context_ptr == NULL) {
         *context_ptr = malloc(sizeof(blink_state_t));
         memset(*context_ptr, 0, sizeof(blink_state_t));
@@ -48,7 +48,7 @@ void blink_face_setup(movement_settings_t *settings, uint8_t watch_face_index, v
 Next, we’ll implement our activate function. When the wearer activates our watch face, we'll want to set up any initial state that makes sense when arriving at the watch face. The temperature log watch face, for example, moves to the most recently logged entry. For our blink face, we make sure to set the active property of our state to false so the light doesn't start blinking right away. (Note that we get a void pointer here, which we cast to our `blink_state_t` type. This "context" pointer may look confusing, but it’s just Movement giving us back the same pointer that we malloc‘ed in setup above.)
 
 {{< highlight c >}}
-void blink_face_activate(movement_settings_t *settings, void *context) {
+void blink_face_activate(void *context) {
     blink_state_t *state = (blink_state_t *)context;
     state->active = false;
 }
@@ -72,7 +72,7 @@ The `watch_display_string` function then displays it in the ten positions availa
 Almost there! Next, we write our loop. This is where the action happens!
 
 {{< highlight c >}}
-bool blink_face_loop(movement_event_t event, movement_settings_t *settings, void *context) {
+bool blink_face_loop(movement_event_t event, void *context) {
     blink_state_t *state = (blink_state_t *)context;
 
     switch (event.event_type) {
@@ -153,7 +153,7 @@ case EVENT_TICK:
 That’s it for our loop! There’s only one function left, and it’s a short one. Our resign function is responsible for any last-minute cleanup before relinquishing control to the next watch face. In our case, it’s possible the wearer might press "Mode" while the LED was on, so we need to make sure to turn it off here, just in case:
 
 {{< highlight c >}}
-void blink_face_resign(movement_settings_t *settings, void *context) {
+void blink_face_resign(void *context) {
     watch_set_led_off();
 }
 {{< /highlight >}}
