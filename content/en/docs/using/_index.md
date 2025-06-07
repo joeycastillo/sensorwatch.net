@@ -14,7 +14,7 @@ You interact with watch faces using the buttons on your watch. Each button can b
 
 ### The MODE button
 
-A short press of the MODE button immediately moves from the current watch face to the next watch face in the list. You can repeatedly press the MODE button, and you'll find yourself right back where you started. If button beeps are enabled, each press of the MODE button will be accompanied by a low-pitch beep, except for the first watch face in the primary list — usually Clock — which gets a higher-pitched beep. (As a shorthand, we will refer to this first face as Clock going forward, but you can place any watch face first in the list.)
+A short press of the MODE button immediately moves from the current watch face to the next watch face in the list. You can repeatedly press the MODE button, and you'll find yourself right back where you started. If button beeps are enabled, each press of the MODE button will be accompanied by a low-pitch beep, except for the first watch face in the primary list — usually Clock — which gets a higher-pitched beep. (As a shorthand, we will refer to this first face as Clock going forward, but if you [build your own custom firmware](/docs/movement/building/), you can place any watch face first in the list.)
 
 A long press of the MODE button behaves differently whether you are on the Clock face or not. If you are currently at the Clock face, a long press of MODE takes you to the secondary list. If you're not currently at the Clock face, a long press of MODE takes you back to the Clock face (accompanied by that higher-pitched beep).
 
