@@ -59,7 +59,10 @@ Install the cross-compiling toolchain on Windows
 Compile firmware
 ----------------
 
-* From within the [repo](https://github.com/joeycastillo/second-movement):
+* Clone the [repo](https://github.com/joeycastillo/second-movement) and submodules:
+*   * `git clone https://github.com/joeycastillo/second-movement.git`
+    * `cd second-movement`
+    * `git submodule update --init`
 * `make BOARD=X DISPLAY=y`, with X and Y replaced with the following:
     * For Sensor Watch Pro boards `make BOARD=sensorwatch_pro`
     * For Sensor Watch Lite boards `make BOARD=sensorwatch_red`
