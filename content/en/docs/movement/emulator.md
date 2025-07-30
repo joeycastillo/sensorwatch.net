@@ -12,12 +12,6 @@ Install the Emscriptem (WASM) cross-compiling toolchain on Linux
 Compile firmware
 ----------------
 
-* From within the [repo](https://github.com/joeycastillo/Sensor-Watch):
-* edit make_alternate_fw.sh to select which build(s) you want
-* `cd movement/make`
-* `./make_alternate_fw.sh`
+Clone the [repo](https://github.com/joeycastillo/second-movement), and install submodules. Then from a terminal, run  `emmake make`. The built firmware will be output to the `build-sim` directory. 
 
-The built firmware will be at `movement/make/firmware/simulate/standard`. You can now run this firmware in your browser with `emrun`:
-
-* `cd movement/make/firmware/simulate/standard`
-* `emrun index.html`
+You can now run this firmware in your browser by serving it over HTTP: `python3 -m http.server -d build-sim`. You'll access it at [http://localhost:8000/firmware.html](http://localhost:8000/firmware.html)

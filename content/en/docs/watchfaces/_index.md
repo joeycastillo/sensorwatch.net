@@ -1,10 +1,11 @@
 ---
-title: "Watch Face Documentation"
-linkTitle: "Watch Face Documentation"
-weight: 20
+title: "Legacy Watch Faces"
+linkTitle: "Legacy Watch Faces"
+weight: 200
 no_list: true
 ---
-This section includes detailed documentation for each of the watch faces available in Movement.
+This section includes detailed documentation for each of the watch faces available in the classic Movement firmware. We are working to port these over to Second Movement, and will create new documentation pages for them once they are available there.
+
 - [Clocks](clock)
   - [Simple Clock](clock#simple-clock)
   - [World Clock](clock#world-clock)

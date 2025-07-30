@@ -59,16 +59,19 @@ Install the cross-compiling toolchain on Windows
 Compile firmware
 ----------------
 
-* From within the [repo](https://github.com/joeycastillo/Sensor-Watch):
-* `cd movement/make`
-* `make COLOR=RED` (for Sensor Watch Lite boards), or for classic green boards, just `make`
+* From within the [repo](https://github.com/joeycastillo/second-movement):
+* `make BOARD=X DISPLAY=y`, with X and Y replaced with the following:
+    * For Sensor Watch Pro boards `make BOARD=sensorwatch_pro`
+    * For Sensor Watch Lite boards `make BOARD=sensorwatch_red`
+    * For classic green or blue boards, `make BOARD=sensorwatch_green` or `make BOARD=sensorwatch_blue`
+    * If you are using the original LCD that came with the Casio, add `DISPLAY=classic`
+    * Otherwise, add `DISPLAY=custom`
 
-The built firmware will be at `build/watch.uf2`. You can now [flash](/docs/firmware/flashing) this firmware to your watch.
+The built firmware will be at `build/firmware.uf2`. You can now [flash](/docs/firmware/flashing) this firmware to your watch.
 
 "I just want to pick my own set of watchfaces"
 ----------------------------------------------
 
-The list of included watchfaces can be found in the `watch_faces` array in `movement/movement_config.h`. Simply add, remove, and/or rearrange faces in this list to your liking and re-compile/re-flash your firmware.
+The list of included watchfaces can be found in the `watch_faces` array in `movement_config.h`. Simply add, remove, and/or rearrange faces in this list to your liking and re-compile/re-flash your firmware.
 
-You can also use the unofficial [online firmware builder](https://sensor-watch-builder.fly.dev/)
-to build both the watch firmware and the emulator.
+An official web-based builder for Second Movement, forked from the previous unofficial online firmware builder, is forthcoming. Watch this space.
