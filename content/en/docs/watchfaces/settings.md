@@ -163,5 +163,5 @@ If you are <30 seconds when setting seconds - you will stay in the same
 minute. Otherwise - you will go to next minute.
 
 Note that changing anything will slightly delay subseconds counter. This
-is why this face sets seconds last to achiveve best precision. Still,
+is why this face sets seconds last to achieve best precision. Still,
 best possible precision is achieved with finetune face.
